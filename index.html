@@ -531,8 +531,7 @@ function render(){
 }
 function pintarWho(){
   const rol=S.canEdit?"Validador":(S.canWrite===false?"Solo lectura":(S.uid?"Colaborador":"Invitado"));
-  const me=S.uid?nombre(S.uid,""):"";
-  $("who").innerHTML=(me?'<span>'+esc(me)+'</span>':'')+'<span class="rolechip">'+esc(rol)+'</span>';
+  $("who").innerHTML='<span class="rolechip">'+esc(rol)+'</span>';
 }
 function pintarTabs(r){
   const pend=[...S.aportes.keys()].filter(id=>estadoDe(id)==="pendiente").length;
@@ -1218,7 +1217,62 @@ async function validar(id,estado,rapido){
 })();
 </script>
 
+<style>
+#portada{display:none;min-height:82vh;padding-block:clamp(2.5rem,7vw,5rem) 3rem;background:
+  radial-gradient(60rem 30rem at 85% -10%, #e6f1f0 0%, rgba(255,255,255,0) 60%),
+  radial-gradient(40rem 24rem at 5% 10%, #f3f7f6 0%, rgba(255,255,255,0) 55%), #fff}
+body.en-portada #portada{display:block}
+body.en-portada .topbar,body.en-portada .tabs,body.en-portada main,body.en-portada footer{display:none}
+#portada .inner{max-width:1000px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+#portada .eyebrow{font-family:var(--font-m);font-size:.71rem;letter-spacing:.17em;text-transform:uppercase;color:var(--brand);margin:0 0 1.4rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+#portada .eyebrow .sello{width:26px;height:26px;border-radius:6px;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:var(--font-h);font-weight:800;font-size:12px;letter-spacing:-.02em;flex:none}
+#portada h1{font-family:var(--font-h);font-size:clamp(3.6rem,14vw,8rem);font-weight:800;letter-spacing:-.055em;line-height:.92;color:var(--ink);margin:0}
+#portada .lede{font-family:var(--font-h);font-size:clamp(1.15rem,3.6vw,1.6rem);font-weight:600;letter-spacing:-.02em;color:var(--brand);margin:1rem 0 0;max-width:30ch;line-height:1.25}
+#portada .sub{font-size:1rem;color:var(--ink-2);max-width:62ch;margin:1.1rem 0 0;line-height:1.65}
+#portada .acciones{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}
+#portada .acciones .btn{padding:.7rem 1.3rem;font-size:.92rem;border-radius:7px}
+#portada .rasgos{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-top:3rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr))}
+#portada .rasgos div{background:#fff;padding:1.1rem 1.15rem;min-width:0}
+#portada .rasgos .n{font-family:var(--font-m);font-size:.66rem;letter-spacing:.12em;color:var(--brand);display:block;margin-bottom:.45rem}
+#portada .rasgos h3{font-family:var(--font-h);font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin:0 0 .25rem;color:var(--ink)}
+#portada .rasgos p{font-size:.85rem;color:var(--ink-2);margin:0;line-height:1.55}
+#portada .pie{display:flex;justify-content:space-between;gap:.6rem 1.5rem;flex-wrap:wrap;margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--line);font-family:var(--font-m);font-size:.72rem;color:var(--ink-3)}
+</style>
+<section id="portada">
+  <div class="inner">
+    <p class="eyebrow"><span class="sello" aria-hidden="true">M</span>Universidad Autónoma de Manizales · Noviembre de 2026</p>
+    <h1>MEMORA</h1>
+    <p class="lede">Que el conocimiento no se vaya con la persona.</p>
+    <p class="sub">Plataforma para capturar, organizar, validar y reutilizar lo que la organización aprende cada día: los procedimientos que funcionan, las lecciones de los errores y las soluciones que hoy solo conoce quien las vivió.</p>
+    <div class="acciones">
+      <button class="btn primary" data-entrar="1">Entrar a la plataforma →</button>
+      <button class="btn" data-entrar="guia">Cómo funciona</button>
+    </div>
+    <div class="rasgos">
+      <div><span class="n">01</span><h3>Banco de conocimiento</h3><p>Procedimientos y experiencias con búsqueda por área, proceso y palabra clave.</p></div>
+      <div><span class="n">02</span><h3>Validación</h3><p>Nada se publica sin que un responsable verifique claridad, pertinencia y confidencialidad.</p></div>
+      <div><span class="n">03</span><h3>Indicadores</h3><p>Registro, aprobación, uso, participación, reutilización y vigencia, en vivo.</p></div>
+      <div><span class="n">04</span><h3>Mapa de expertos</h3><p>Quién documenta cada proceso y qué áreas siguen sin conocimiento documentado.</p></div>
+    </div>
+    <div class="pie"><span>Prototipo funcional para prueba piloto</span><span>Propuesta de herramienta de gestión del conocimiento</span></div>
+  </div>
+</section>
+<script>
+(function(){
+  var b=document.body;
+  function sync(){
+    var h=(location.hash||"").replace(/^#/,"");
+    if(!h||h==="portada"){ b.classList.add("en-portada"); window.scrollTo(0,0); }
+    else b.classList.remove("en-portada");
+  }
+  window.addEventListener("hashchange",sync);
+  document.addEventListener("click",function(ev){
+    var t=ev.target.closest("[data-entrar]"); if(!t) return;
+    location.hash = t.dataset.entrar==="guia" ? "guia" : "buscar";
+  });
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",sync); else sync();
+})();
+</script>
+
 </body>
 </html>
-
-<!-- despliegue -->
