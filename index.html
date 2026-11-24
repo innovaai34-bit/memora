@@ -1218,57 +1218,337 @@ async function validar(id,estado,rapido){
 </script>
 
 <style>
-#portada{display:none;min-height:82vh;padding-block:clamp(2.5rem,7vw,5rem) 3rem;background:
-  radial-gradient(60rem 30rem at 85% -10%, #e6f1f0 0%, rgba(255,255,255,0) 60%),
-  radial-gradient(40rem 24rem at 5% 10%, #f3f7f6 0%, rgba(255,255,255,0) 55%), #fff}
+/* ===== Página principal ===== */
+#portada{display:none;background:#fff}
 body.en-portada #portada{display:block}
 body.en-portada .topbar,body.en-portada .tabs,body.en-portada main,body.en-portada footer{display:none}
-#portada .inner{max-width:1000px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-#portada .eyebrow{font-family:var(--font-m);font-size:.71rem;letter-spacing:.17em;text-transform:uppercase;color:var(--brand);margin:0 0 1.4rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
-#portada .eyebrow .sello{width:26px;height:26px;border-radius:6px;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:var(--font-h);font-weight:800;font-size:12px;letter-spacing:-.02em;flex:none}
-#portada h1{font-family:var(--font-h);font-size:clamp(3.6rem,14vw,8rem);font-weight:800;letter-spacing:-.055em;line-height:.92;color:var(--ink);margin:0}
-#portada .lede{font-family:var(--font-h);font-size:clamp(1.15rem,3.6vw,1.6rem);font-weight:600;letter-spacing:-.02em;color:var(--brand);margin:1rem 0 0;max-width:30ch;line-height:1.25}
-#portada .sub{font-size:1rem;color:var(--ink-2);max-width:62ch;margin:1.1rem 0 0;line-height:1.65}
-#portada .acciones{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}
-#portada .acciones .btn{padding:.7rem 1.3rem;font-size:.92rem;border-radius:7px}
-#portada .rasgos{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-top:3rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr))}
-#portada .rasgos div{background:#fff;padding:1.1rem 1.15rem;min-width:0}
-#portada .rasgos .n{font-family:var(--font-m);font-size:.66rem;letter-spacing:.12em;color:var(--brand);display:block;margin-bottom:.45rem}
-#portada .rasgos h3{font-family:var(--font-h);font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin:0 0 .25rem;color:var(--ink)}
-#portada .rasgos p{font-size:.85rem;color:var(--ink-2);margin:0;line-height:1.55}
-#portada .pie{display:flex;justify-content:space-between;gap:.6rem 1.5rem;flex-wrap:wrap;margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--line);font-family:var(--font-m);font-size:.72rem;color:var(--ink-3)}
+#portada .inner{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+#portada section{padding-block:clamp(3rem,7vw,5.5rem)}
+#portada h2{font-family:var(--font-h);font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:800;letter-spacing:-.035em;color:var(--ink);margin:0 0 .6rem;max-width:20ch}
+#portada .sec-lede{font-size:1.02rem;color:var(--ink-2);max-width:62ch;margin:0 0 2rem;line-height:1.65}
+#portada .kicker{font-family:var(--font-m);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin:0 0 .8rem}
+
+/* barra fija de la portada */
+#pnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+#pnav .inner{display:flex;align-items:center;gap:1rem;padding-block:.65rem}
+#pnav .marca{display:flex;align-items:center;gap:.55rem;margin-right:auto;font-family:var(--font-h);font-weight:800;letter-spacing:.02em;font-size:1rem}
+#pnav .sello{width:27px;height:27px;border-radius:7px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:12px;flex:none}
+#pnav a{font-size:.85rem;color:var(--ink-2);text-decoration:none;padding:.3rem .1rem}
+#pnav a:hover{color:var(--brand)}
+#pnav .ocultar{display:none}
+@media (min-width:760px){#pnav .ocultar{display:inline}}
+
+/* hero */
+#phero{padding-block:clamp(2.6rem,6vw,4.6rem) clamp(2.6rem,6vw,4rem);background:
+  radial-gradient(64rem 32rem at 88% -14%, #e6f1f0 0%, rgba(255,255,255,0) 62%),
+  radial-gradient(42rem 26rem at -6% 6%, #f4f8f7 0%, rgba(255,255,255,0) 58%), #fff}
+#phero .grid{display:grid;gap:clamp(2rem,5vw,3.5rem);grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center}
+@media (max-width:860px){#phero .grid{grid-template-columns:1fr}}
+#phero .eyebrow{font-family:var(--font-m);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin:0 0 1.1rem}
+#phero h1{font-family:var(--font-h);font-size:clamp(3.2rem,11vw,6.4rem);font-weight:800;letter-spacing:-.055em;line-height:.9;color:var(--ink);margin:0}
+#phero .lede{font-family:var(--font-h);font-size:clamp(1.15rem,3.4vw,1.55rem);font-weight:600;letter-spacing:-.02em;color:var(--brand);margin:1rem 0 0;max-width:24ch;line-height:1.25}
+#phero .sub{font-size:1rem;color:var(--ink-2);max-width:54ch;margin:1.1rem 0 0;line-height:1.68}
+#phero .acciones{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}
+#phero .acciones .btn{padding:.72rem 1.35rem;font-size:.93rem;border-radius:8px}
+#phero .dato{display:flex;gap:1.9rem;flex-wrap:wrap;margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+#phero .dato div{min-width:0}
+#phero .dato b{display:block;font-family:var(--font-h);font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--brand);font-variant-numeric:tabular-nums}
+#phero .dato span{font-size:.79rem;color:var(--ink-3)}
+.ilus{width:100%;height:auto;display:block}
+
+/* problema */
+#pprob{background:var(--surface-2);border-block:1px solid var(--line)}
+#pprob .cols{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+#pprob .cols>div{background:#fff;padding:1.5rem 1.6rem}
+#pprob h3{font-family:var(--font-h);font-size:1.05rem;font-weight:700;margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem}
+#pprob .mk{width:9px;height:9px;border-radius:2px;flex:none}
+#pprob p{font-size:.92rem;color:var(--ink-2);margin:0 0 .6rem;line-height:1.65}
+#pprob ul{margin:0;padding-left:1.1rem}
+#pprob li{font-size:.9rem;color:var(--ink-2);margin-bottom:.35rem}
+
+/* ciclo */
+#pciclo .ilus-wrap{border:1px solid var(--line);border-radius:10px;padding:1.4rem 1rem;background:#fff;overflow-x:auto}
+
+/* módulos */
+#pmod .tarjetas{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,268px),1fr))}
+#pmod .t{border:1px solid var(--line);border-radius:10px;padding:1.3rem 1.35rem;background:#fff;min-width:0;transition:border-color .15s}
+#pmod .t:hover{border-color:var(--brand)}
+#pmod .ico{width:38px;height:38px;border-radius:9px;background:var(--brand-soft);display:grid;place-items:center;margin-bottom:.85rem}
+#pmod h3{font-family:var(--font-h);font-size:1.02rem;font-weight:700;letter-spacing:-.01em;margin:0 0 .3rem}
+#pmod p{font-size:.88rem;color:var(--ink-2);margin:0;line-height:1.6}
+
+/* panel */
+#ppanel{background:var(--ink);color:#fff;border-block:1px solid var(--ink)}
+#ppanel h2{color:#fff}
+#ppanel .kicker{color:#7fd4c9}
+#ppanel .sec-lede{color:#b9c2d0}
+#ppanel .grid{display:grid;gap:clamp(1.6rem,4vw,3rem);grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center}
+@media (max-width:860px){#ppanel .grid{grid-template-columns:1fr}}
+#ppanel .marco{background:#1b2230;border:1px solid #2a3344;border-radius:11px;padding:1.1rem}
+
+/* cierre */
+#pcierre{text-align:center}
+#pcierre h2{margin:0 auto .7rem;max-width:22ch}
+#pcierre .sec-lede{margin:0 auto 1.8rem}
+#pcierre .acciones{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+#pcierre .acciones .btn{padding:.72rem 1.35rem;font-size:.93rem;border-radius:8px}
+#ppie{border-top:1px solid var(--line);padding-block:1.6rem;background:var(--surface-2)}
+#ppie .inner{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;font-family:var(--font-m);font-size:.73rem;color:var(--ink-3)}
 </style>
-<section id="portada">
-  <div class="inner">
-    <p class="eyebrow"><span class="sello" aria-hidden="true">M</span>Universidad Autónoma de Manizales · Noviembre de 2026</p>
-    <h1>MEMORA</h1>
-    <p class="lede">Que el conocimiento no se vaya con la persona.</p>
-    <p class="sub">Plataforma para capturar, organizar, validar y reutilizar lo que la organización aprende cada día: los procedimientos que funcionan, las lecciones de los errores y las soluciones que hoy solo conoce quien las vivió.</p>
+
+<div id="portada">
+  <nav id="pnav"><div class="inner">
+    <span class="marca"><span class="sello" aria-hidden="true">M</span>MEMORA</span>
+    <a href="#inicio" class="ocultar" data-ancla="pprob">El problema</a>
+    <a href="#inicio" class="ocultar" data-ancla="pciclo">Cómo funciona</a>
+    <a href="#inicio" class="ocultar" data-ancla="pmod">Módulos</a>
+    <button class="btn primary" data-entrar="1" style="padding:.42rem .9rem;font-size:.85rem">Entrar</button>
+  </div></nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="phero"><div class="inner"><div class="grid">
+    <div>
+      <p class="eyebrow">Universidad Autónoma de Manizales · 2026</p>
+      <h1>MEMORA</h1>
+      <p class="lede">Que el conocimiento no se vaya con la persona.</p>
+      <p class="sub">Plataforma para capturar, organizar, validar y reutilizar lo que la organización aprende cada día: los procedimientos que sí funcionan, las lecciones que dejaron los errores y las soluciones que hoy solo conoce quien las vivió.</p>
+      <div class="acciones">
+        <button class="btn primary" data-entrar="1">Entrar a la plataforma →</button>
+        <button class="btn" data-entrar="guia">Cómo funciona</button>
+      </div>
+      <div class="dato">
+        <div><b>6</b><span>etapas del ciclo</span></div>
+        <div><b>7</b><span>módulos operativos</span></div>
+        <div><b>6</b><span>indicadores en vivo</span></div>
+      </div>
+    </div>
+    <div>
+      <!-- Ilustración: del saber individual al conocimiento compartido -->
+      <svg class="ilus" viewBox="0 0 520 420" role="img" aria-label="Una experiencia individual se documenta como ficha, se valida y queda disponible para todo el equipo">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0b5f5a"/><stop offset="1" stop-color="#14837b"/>
+          </linearGradient>
+        </defs>
+        <!-- persona origen -->
+        <circle cx="74" cy="118" r="26" fill="#e6f1f0" stroke="#0b5f5a" stroke-width="1.5"/>
+        <circle cx="74" cy="110" r="9" fill="#0b5f5a"/>
+        <path d="M58 132c3-9 9-13 16-13s13 4 16 13" fill="#0b5f5a"/>
+        <text x="74" y="170" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#7d8899">experiencia</text>
+        <!-- flecha 1 -->
+        <path d="M108 118h52" stroke="#cfd6e0" stroke-width="2" stroke-dasharray="5 5"/>
+        <path d="M160 118l-8-5v10z" fill="#cfd6e0"/>
+        <!-- ficha -->
+        <rect x="172" y="52" width="168" height="134" rx="10" fill="#fff" stroke="#cfd6e0" stroke-width="1.5"/>
+        <rect x="172" y="52" width="168" height="30" rx="10" fill="#f6f8fa"/>
+        <rect x="172" y="72" width="168" height="10" fill="#f6f8fa"/>
+        <circle cx="187" cy="67" r="4" fill="#0b5f5a"/>
+        <rect x="198" y="63" width="76" height="8" rx="4" fill="#cfd6e0"/>
+        <rect x="188" y="98" width="136" height="7" rx="3.5" fill="#e4e8ee"/>
+        <rect x="188" y="114" width="118" height="7" rx="3.5" fill="#e4e8ee"/>
+        <rect x="188" y="130" width="136" height="7" rx="3.5" fill="#e4e8ee"/>
+        <rect x="188" y="146" width="84" height="7" rx="3.5" fill="#e4e8ee"/>
+        <rect x="188" y="164" width="44" height="12" rx="6" fill="#e6f1f0"/>
+        <rect x="238" y="164" width="38" height="12" rx="6" fill="#e6f1f0"/>
+        <!-- validación -->
+        <circle cx="256" cy="238" r="23" fill="#e9f5ed" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M246 238l7 7 14-15" fill="none" stroke="#15803d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M256 190v22" stroke="#cfd6e0" stroke-width="2" stroke-dasharray="5 5"/>
+        <path d="M256 212l-5-8h10z" fill="#cfd6e0"/>
+        <text x="256" y="282" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#7d8899">validado</text>
+        <!-- equipo receptor -->
+        <g>
+          <rect x="140" y="312" width="232" height="76" rx="12" fill="url(#g1)"/>
+          <text x="256" y="340" text-anchor="middle" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#fff">Banco de conocimiento</text>
+          <g fill="#ffffff" opacity=".92">
+            <circle cx="186" cy="364" r="9"/><circle cx="212" cy="364" r="9"/><circle cx="238" cy="364" r="9"/>
+            <circle cx="264" cy="364" r="9"/><circle cx="290" cy="364" r="9"/><circle cx="316" cy="364" r="9"/>
+          </g>
+        </g>
+        <path d="M256 296v10" stroke="#cfd6e0" stroke-width="2" stroke-dasharray="5 5"/>
+        <path d="M256 306l-5-8h10z" fill="#cfd6e0"/>
+        <!-- reutilización -->
+        <path d="M384 350c42 0 54-120 10-168" fill="none" stroke="#0b5f5a" stroke-width="1.8" stroke-dasharray="6 6" opacity=".55"/>
+        <path d="M394 182l-4 11 11-2z" fill="#0b5f5a" opacity=".55"/>
+        <text x="432" y="268" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#0b5f5a" opacity=".75">se reutiliza</text>
+      </svg>
+    </div>
+  </div></div></section>
+
+  <!-- ============ PROBLEMA ============ -->
+  <section id="pprob"><div class="inner">
+    <p class="kicker">El problema</p>
+    <h2>El conocimiento existe, pero no se encuentra</h2>
+    <p class="sec-lede">Buena parte de lo que una organización sabe no está escrito en ninguna parte: vive en la cabeza de quien lo aprendió haciendo. Cuando esa persona cambia de cargo o se va, el equipo vuelve a empezar.</p>
+    <div class="cols">
+      <div>
+        <h3><span class="mk" style="background:#b45309"></span>Sin MEMORA</h3>
+        <ul>
+          <li>La solución quedó en un correo que nadie encuentra.</li>
+          <li>Se repiten errores que ya se habían resuelto.</li>
+          <li>La inducción depende de que alguien tenga tiempo.</li>
+          <li>Todo pasa por la misma persona de siempre.</li>
+          <li>Las buenas prácticas de un área no llegan a las demás.</li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="mk" style="background:#15803d"></span>Con MEMORA</h3>
+        <ul>
+          <li>La experiencia se documenta una vez y queda disponible.</li>
+          <li>Un responsable valida antes de publicar.</li>
+          <li>Se busca por palabra clave, área o proceso.</li>
+          <li>Quien lo aplica reporta si funcionó.</li>
+          <li>Los contenidos tienen fecha de revisión y responsable.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ============ CICLO ============ -->
+  <section id="pciclo"><div class="inner">
+    <p class="kicker">Cómo funciona</p>
+    <h2>Un ciclo de seis etapas</h2>
+    <p class="sec-lede">El orden importa: nada se publica antes de validarse, y ningún contenido queda vigente para siempre sin revisión.</p>
+    <div class="ilus-wrap">
+      <svg class="ilus" viewBox="0 0 980 230" role="img" aria-label="Ciclo de seis etapas: identificación, registro, clasificación, validación, aplicación y actualización, que vuelve al inicio">
+        <g font-family="Manrope, sans-serif">
+          <g>
+            <circle cx="80" cy="88" r="30" fill="#e6f1f0" stroke="#0b5f5a" stroke-width="1.5"/>
+            <text x="80" y="94" text-anchor="middle" font-size="16" font-weight="800" fill="#0b5f5a">01</text>
+            <text x="80" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Identificar</text>
+            <text x="80" y="166" text-anchor="middle" font-size="11" fill="#7d8899" font-family="Inter, sans-serif">algo que sirve</text>
+          </g>
+          <path d="M118 88h44" stroke="#cfd6e0" stroke-width="2"/><path d="M162 88l-9-5.5v11z" fill="#cfd6e0"/>
+          <g>
+            <circle cx="255" cy="88" r="30" fill="#e6f1f0" stroke="#0b5f5a" stroke-width="1.5"/>
+            <text x="255" y="94" text-anchor="middle" font-size="16" font-weight="800" fill="#0b5f5a">02</text>
+            <text x="255" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Registrar</text>
+            <text x="255" y="166" text-anchor="middle" font-size="11" fill="#7d8899" font-family="Inter, sans-serif">en un formulario</text>
+          </g>
+          <path d="M293 88h44" stroke="#cfd6e0" stroke-width="2"/><path d="M337 88l-9-5.5v11z" fill="#cfd6e0"/>
+          <g>
+            <circle cx="430" cy="88" r="30" fill="#e6f1f0" stroke="#0b5f5a" stroke-width="1.5"/>
+            <text x="430" y="94" text-anchor="middle" font-size="16" font-weight="800" fill="#0b5f5a">03</text>
+            <text x="430" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Clasificar</text>
+            <text x="430" y="166" text-anchor="middle" font-size="11" fill="#7d8899" font-family="Inter, sans-serif">área y palabras clave</text>
+          </g>
+          <path d="M468 88h44" stroke="#cfd6e0" stroke-width="2"/><path d="M512 88l-9-5.5v11z" fill="#cfd6e0"/>
+          <g>
+            <circle cx="605" cy="88" r="30" fill="#e9f5ed" stroke="#15803d" stroke-width="1.8"/>
+            <text x="605" y="94" text-anchor="middle" font-size="16" font-weight="800" fill="#15803d">04</text>
+            <text x="605" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Validar</text>
+            <text x="605" y="166" text-anchor="middle" font-size="11" fill="#7d8899" font-family="Inter, sans-serif">un responsable revisa</text>
+          </g>
+          <path d="M643 88h44" stroke="#cfd6e0" stroke-width="2"/><path d="M687 88l-9-5.5v11z" fill="#cfd6e0"/>
+          <g>
+            <circle cx="780" cy="88" r="30" fill="#e6f1f0" stroke="#0b5f5a" stroke-width="1.5"/>
+            <text x="780" y="94" text-anchor="middle" font-size="16" font-weight="800" fill="#0b5f5a">05</text>
+            <text x="780" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Aplicar</text>
+            <text x="780" y="166" text-anchor="middle" font-size="11" fill="#7d8899" font-family="Inter, sans-serif">y reportar el uso</text>
+          </g>
+          <path d="M818 88h44" stroke="#cfd6e0" stroke-width="2"/><path d="M862 88l-9-5.5v11z" fill="#cfd6e0"/>
+          <g>
+            <circle cx="920" cy="88" r="30" fill="#fcf2e6" stroke="#b45309" stroke-width="1.5"/>
+            <text x="920" y="94" text-anchor="middle" font-size="16" font-weight="800" fill="#b45309">06</text>
+            <text x="920" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Actualizar</text>
+            <text x="920" y="166" text-anchor="middle" font-size="11" fill="#7d8899" font-family="Inter, sans-serif">revisar vigencia</text>
+          </g>
+          <path d="M920 30c0-16-14-22-30-22H110C94 8 80 14 80 30v24" fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="7 6" opacity=".6"/>
+          <path d="M80 54l-5-9h10z" fill="#b45309" opacity=".6"/>
+          <text x="500" y="22" text-anchor="middle" font-size="11" fill="#b45309" opacity=".85" font-family="IBM Plex Mono, monospace">el ciclo vuelve a empezar</text>
+        </g>
+      </svg>
+    </div>
+  </div></section>
+
+  <!-- ============ MÓDULOS ============ -->
+  <section id="pmod" style="background:var(--surface-2);border-block:1px solid var(--line)"><div class="inner">
+    <p class="kicker">Qué incluye</p>
+    <h2>Siete módulos que trabajan juntos</h2>
+    <p class="sec-lede">Cada pieza alimenta a la siguiente: lo que se registra se valida, lo que se valida se busca, lo que se usa se mide.</p>
+    <div class="tarjetas">
+      <div class="t"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5f5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
+        <h3>Banco de conocimiento</h3><p>Procedimientos, lecciones aprendidas y soluciones, con filtros por área, proceso, tipo y estado.</p></div>
+      <div class="t"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5f5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <h3>Compartir conocimiento</h3><p>Formulario guiado según el tipo de aporte, con palabras clave sugeridas y aviso de posibles duplicados.</p></div>
+      <div class="t"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5f5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Revisión y validación</h3><p>Cola con criterios explícitos, nota de revisión y fecha de próxima vigencia al aprobar.</p></div>
+      <div class="t"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5f5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></div>
+        <h3>Consulta asistida</h3><p>Describe el problema en lenguaje normal y recibe los contenidos aprobados que aplican, citados.</p></div>
+      <div class="t"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5f5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Indicadores</h3><p>Registro, aprobación, uso, participación, reutilización y vigencia, calculados en vivo.</p></div>
+      <div class="t"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5f5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 11h4M19 9v4"/></svg></div>
+        <h3>Mapa de expertos</h3><p>Quién documenta cada proceso y qué áreas siguen sin conocimiento documentado.</p></div>
+    </div>
+  </div></section>
+
+  <!-- ============ PANEL ============ -->
+  <section id="ppanel"><div class="inner"><div class="grid">
+    <div>
+      <p class="kicker">Medición</p>
+      <h2>Seis indicadores, calculados sobre datos reales</h2>
+      <p class="sec-lede">Nada está escrito a mano: si el banco está vacío, los indicadores están en cero. Cada tarjeta abre el banco con su filtro, de modo que todo número se puede rastrear hasta los contenidos que lo producen.</p>
+      <button class="btn" data-entrar="indicadores" style="background:transparent;border-color:#3b4557;color:#fff">Ver el panel →</button>
+    </div>
+    <div class="marco">
+      <svg class="ilus" viewBox="0 0 470 268" role="img" aria-label="Vista del panel de indicadores con tarjetas numéricas y distribución por estado">
+        <g font-family="Manrope, sans-serif">
+          <rect x="8" y="8" width="138" height="74" rx="9" fill="#232c3c"/>
+          <text x="24" y="33" font-size="9.5" fill="#8d99ad" font-family="IBM Plex Mono, monospace">APORTES</text>
+          <text x="24" y="64" font-size="26" font-weight="800" fill="#fff">9</text>
+          <rect x="160" y="8" width="138" height="74" rx="9" fill="#232c3c"/>
+          <text x="176" y="33" font-size="9.5" fill="#8d99ad" font-family="IBM Plex Mono, monospace">APROBACIÓN</text>
+          <text x="176" y="64" font-size="26" font-weight="800" fill="#2fa39a">83%</text>
+          <rect x="312" y="8" width="138" height="74" rx="9" fill="#232c3c"/>
+          <text x="328" y="33" font-size="9.5" fill="#8d99ad" font-family="IBM Plex Mono, monospace">VIGENCIA</text>
+          <text x="328" y="64" font-size="26" font-weight="800" fill="#fff">80%</text>
+
+          <rect x="8" y="96" width="442" height="164" rx="9" fill="#232c3c"/>
+          <text x="24" y="120" font-size="9.5" fill="#8d99ad" font-family="IBM Plex Mono, monospace">POR ÁREA RESPONSABLE</text>
+          <g font-size="11" fill="#c3ccd9" font-family="Inter, sans-serif">
+            <text x="24" y="146">Tecnología</text><rect x="150" y="137" width="268" height="10" rx="3" fill="#2fa39a"/><text x="428" y="146" fill="#fff">2</text>
+            <text x="24" y="172">Servicio</text><rect x="150" y="163" width="134" height="10" rx="3" fill="#2fa39a" opacity=".82"/><text x="428" y="172" fill="#fff">1</text>
+            <text x="24" y="198">Finanzas</text><rect x="150" y="189" width="134" height="10" rx="3" fill="#2fa39a" opacity=".82"/><text x="428" y="198" fill="#fff">1</text>
+            <text x="24" y="224">Calidad</text><rect x="150" y="215" width="134" height="10" rx="3" fill="#2fa39a" opacity=".82"/><text x="428" y="224" fill="#fff">1</text>
+            <text x="24" y="250">Talento humano</text><rect x="150" y="241" width="134" height="10" rx="3" fill="#2fa39a" opacity=".82"/><text x="428" y="250" fill="#fff">1</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div></div></section>
+
+  <!-- ============ CIERRE ============ -->
+  <section id="pcierre"><div class="inner">
+    <p class="kicker">Empieza aquí</p>
+    <h2>El primer aporte puede ser algo que hiciste esta semana</h2>
+    <p class="sec-lede">Una forma más rápida de hacer una tarea, un error del que aprendiste algo, la respuesta que por fin funcionó con un cliente. Eso es conocimiento organizacional.</p>
     <div class="acciones">
       <button class="btn primary" data-entrar="1">Entrar a la plataforma →</button>
-      <button class="btn" data-entrar="guia">Cómo funciona</button>
+      <button class="btn" data-entrar="nuevo">Registrar un conocimiento</button>
     </div>
-    <div class="rasgos">
-      <div><span class="n">01</span><h3>Banco de conocimiento</h3><p>Procedimientos y experiencias con búsqueda por área, proceso y palabra clave.</p></div>
-      <div><span class="n">02</span><h3>Validación</h3><p>Nada se publica sin que un responsable verifique claridad, pertinencia y confidencialidad.</p></div>
-      <div><span class="n">03</span><h3>Indicadores</h3><p>Registro, aprobación, uso, participación, reutilización y vigencia, en vivo.</p></div>
-      <div><span class="n">04</span><h3>Mapa de expertos</h3><p>Quién documenta cada proceso y qué áreas siguen sin conocimiento documentado.</p></div>
-    </div>
-    <div class="pie"><span>Prototipo funcional para prueba piloto</span><span>Propuesta de herramienta de gestión del conocimiento</span></div>
-  </div>
-</section>
+  </div></section>
+
+  <div id="ppie"><div class="inner">
+    <span>MEMORA · Prototipo funcional para prueba piloto</span>
+    <span>Universidad Autónoma de Manizales · Manizales, Caldas · 2026</span>
+  </div></div>
+</div>
+
 <script>
 (function(){
   var b=document.body;
   function sync(){
     var h=(location.hash||"").replace(/^#/,"");
-    if(!h||h==="portada"){ b.classList.add("en-portada"); window.scrollTo(0,0); }
+    if(!h||h==="inicio"||h==="portada"){ b.classList.add("en-portada"); }
     else b.classList.remove("en-portada");
   }
-  window.addEventListener("hashchange",sync);
+  window.addEventListener("hashchange",function(){ sync(); if(!b.classList.contains("en-portada")) window.scrollTo(0,0); });
   document.addEventListener("click",function(ev){
+    var a=ev.target.closest("[data-ancla]");
+    if(a){ ev.preventDefault(); var el=document.getElementById(a.dataset.ancla); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); return; }
     var t=ev.target.closest("[data-entrar]"); if(!t) return;
-    location.hash = t.dataset.entrar==="guia" ? "guia" : "buscar";
+    var d=t.dataset.entrar;
+    location.hash = (d==="1") ? "buscar" : d;
   });
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",sync); else sync();
 })();
