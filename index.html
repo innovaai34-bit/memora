@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="MEMORA — sistema de gestión y memoria del conocimiento organizacional. Universidad Autónoma de Manizales.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5f5a'/%3E%3Ctext x='16' y='22' font-family='system-ui' font-size='18' font-weight='800' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif;background:#fff;color:#111827}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div id="aviso-demo" style="background:#f6f8fa;border-bottom:1px solid #e4e8ee;font:13px/1.5 Inter,system-ui,sans-serif;color:#4b5667;padding:.55rem 16px;text-align:center">
+  <b style="color:#0b5f5a">Versión de demostración.</b> Los aportes que registres aquí se guardan en <b>este navegador</b>: no se comparten con otras personas ni se envían a ningún servidor.
+  <button onclick="if(confirm('¿Restablecer la demostración con los contenidos de ejemplo?')){try{localStorage.removeItem('memora.v1')}catch(e){}location.reload()}" style="margin-left:.5rem;font:inherit;border:1px solid #cfd6e0;background:#fff;border-radius:5px;padding:.15rem .5rem;cursor:pointer">Restablecer</button>
+</div>
+<script>window.MEMORA_SEMILLA={c:{"aportes": {"a-ej-acceso": {"acceso": "Toda la organización", "accion": "1. Confirmar la identidad de quien solicita con dos datos que solo el titular conoce (número de documento y el último equipo asignado).\n2. Registrar el caso en la mesa de ayuda antes de hacer cualquier cambio.\n3. Generar el restablecimiento desde el panel de administración con la opción de cambio obligatorio en el primer ingreso.\n4. Notificar por el correo institucional del titular, nunca por chat ni por teléfono.\n5. Cerrar el caso confirmando con el usuario que pudo ingresar.", "actualizadoEn": "2026-09-15T08:40:00.000Z", "area": "Tecnología y sistemas", "autorEtiqueta": "Mesa de ayuda", "autorId": null, "claves": ["acceso", "contraseña", "bloqueo", "soporte"], "comentaristas": {}, "contexto": "Cada semana llegan solicitudes de desbloqueo de cuenta. Antes se resolvían por teléfono dictando una contraseña temporal, lo que dejaba la credencial en un canal no seguro y sin registro de quién la solicitó.", "creadoEn": "2026-09-15T08:40:00.000Z", "ediciones": 0, "ejemplo": true, "proceso": "Soporte técnico", "recomendaciones": "Si quien llama no puede confirmar los dos datos, escalar al jefe inmediato: la urgencia nunca justifica saltarse la verificación. No reutilizar contraseñas temporales entre usuarios.", "resultado": "Ninguna contraseña vuelve a circular por canales no seguros y cada desbloqueo queda con responsable y fecha.", "reusos": {}, "tipo": "Procedimiento", "titulo": "Restablecer el acceso de un usuario bloqueado sin exponer credenciales", "utiles": {}, "vistas": {}}, "a-ej-auditoria": {"acceso": "Toda la organización", "accion": "Se armó una carpeta viva por proceso con las ocho evidencias que se solicitan en todas las auditorías, cada una con su responsable y su periodicidad de actualización. La carpeta se revisa el primer lunes de cada mes, no la semana previa a la auditoría.", "actualizadoEn": "2026-08-07T11:00:00.000Z", "area": "Calidad y procesos", "autorEtiqueta": "Área de calidad", "autorId": null, "claves": ["auditoría", "evidencias", "calidad", "preparación"], "comentaristas": {}, "contexto": "Cada auditoría interna generaba una semana de trabajo extra buscando los mismos documentos: actas de capacitación, registros de mantenimiento, control de versiones de procedimientos y evidencia de acciones correctivas del ciclo anterior.", "creadoEn": "2026-08-07T11:00:00.000Z", "ediciones": 0, "ejemplo": true, "proceso": "Auditoría interna", "recomendaciones": "Mantener la carpeta al día cuesta unos minutos al mes; reconstruirla cuesta días. No archivar evidencias en carpetas personales: deben quedar en la ruta del proceso.", "resultado": "La preparación pasó de una semana a una reunión de revisión, y los hallazgos por falta de evidencia desaparecieron.", "reusos": {}, "tipo": "Buena práctica", "titulo": "Auditoría interna: las evidencias que siempre piden y dónde están", "utiles": {}, "vistas": {}}, "a-ej-cierre": {"acceso": "Toda la organización", "accion": "Se pasó de conciliar al cierre a conciliar cada viernes: se revisan los movimientos de la semana, se documenta cada diferencia el mismo día con su soporte y se deja registrada la persona responsable de resolverla.", "actualizadoEn": "2026-11-06T16:00:00.000Z", "area": "Finanzas y contabilidad", "autorEtiqueta": "Área de finanzas", "autorId": null, "claves": ["cierre contable", "conciliación", "reprocesos"], "comentaristas": {}, "contexto": "El cierre mensual se retrasaba porque las diferencias bancarias se detectaban el último día, cuando ya no había tiempo de buscar soportes y había que reprocesar asientos.", "creadoEn": "2026-11-06T16:00:00.000Z", "ejemplo": true, "proceso": "Cierre contable", "recomendaciones": "Dejar siempre evidencia del soporte de cada ajuste. No acumular diferencias menores: son las que más tiempo consumen al final del mes.", "resultado": "El cierre pasó de cinco a tres días hábiles en los dos últimos meses, sin asientos de ajuste de última hora.", "reusos": {}, "tipo": "Lección aprendida", "titulo": "Cierre contable mensual sin reprocesos en la conciliación bancaria", "utiles": {}, "vistas": {}}, "a-ej-correos": {"acceso": "Toda la organización", "accion": "1. Revisar el dominio completo del remitente, no el nombre que se muestra.\n2. Desconfiar de la urgencia: es el recurso más usado para evitar la verificación.\n3. Ante cualquier cambio de cuenta bancaria o solicitud de pago, confirmar por un canal distinto y con un número que ya se tenía, nunca con el que aparece en el correo.\n4. No abrir adjuntos inesperados; reenviar el correo a la mesa de ayuda como adjunto.\n5. Si ya se hizo clic, reportarlo de inmediato: el tiempo de reporte define el daño.", "actualizadoEn": "2026-10-28T09:20:00.000Z", "area": "Tecnología y sistemas", "autorEtiqueta": "Seguridad de la información", "autorId": null, "claves": ["phishing", "correo", "seguridad", "verificación"], "comentaristas": {}, "contexto": "Llegan correos que simulan ser de un proveedor o de la dirección pidiendo un pago urgente o el cambio de una cuenta bancaria. El riesgo no está en abrir el correo, sino en actuar sobre él sin verificar.", "creadoEn": "2026-10-28T09:20:00.000Z", "ediciones": 0, "ejemplo": true, "proceso": "Seguridad de la información", "recomendaciones": "Reportar un falso positivo no tiene costo; no reportar un caso real sí. Nadie será cuestionado por consultar.", "resultado": "Los reportes a la mesa de ayuda aumentaron, que es el comportamiento esperado: significa que se verifica antes de actuar.", "reusos": {}, "tipo": "Procedimiento", "titulo": "Correos sospechosos: cómo verificar antes de hacer clic", "utiles": {}, "vistas": {}}, "a-ej-cotizacion": {"acceso": "Solo mi área", "accion": "Antes de cotizar se confirman tres puntos con el cliente: quién aprueba la compra, en qué rango de presupuesto se mueve y para cuándo lo necesita. Si alguno queda sin respuesta, se envía igual, pero se marca la oportunidad como incompleta en el seguimiento.", "actualizadoEn": "2026-11-23T17:10:00.000Z", "area": "Comercial y ventas", "autorEtiqueta": "Área comercial", "autorId": null, "claves": ["cotización", "propuesta", "cierre", "cliente"], "comentaristas": {}, "contexto": "Una parte alta de las cotizaciones enviadas no recibe respuesta. Al revisar los casos, varias se habían enviado sin saber quién decide la compra, con qué presupuesto ni en qué fecha necesita el cliente el producto.", "creadoEn": "2026-11-23T17:10:00.000Z", "ediciones": 0, "ejemplo": true, "proceso": "Gestión de pedidos", "recomendaciones": "No convertir las preguntas en un interrogatorio: se resuelven en la misma conversación de levantamiento de la necesidad.", "resultado": "Por confirmar con el cierre del trimestre; la medición requiere la línea base del piloto.", "reusos": {}, "tipo": "Recomendación", "titulo": "Cotizaciones que no se cierran: tres preguntas antes de enviar la propuesta", "utiles": {}, "vistas": {}}, "a-ej-empacadora": {"acceso": "Toda la organización", "accion": "Se documentó la secuencia de verificación que el técnico hacía siempre: revisar el sensor de posición del carro, confirmar la temperatura de la mordaza, comprobar que el rollo no venga descentrado y revisar el filtro de aire. Tres de cada cuatro paros se resuelven en esos cuatro puntos sin intervención especializada.", "actualizadoEn": "2026-11-21T22:30:00.000Z", "area": "Producción y operaciones", "autorEtiqueta": "Supervisión de planta", "autorId": null, "claves": ["empacadora", "paro de línea", "mantenimiento", "diagnóstico"], "comentaristas": {}, "contexto": "La empacadora se detiene de forma intermitente y el turno de la noche no tiene al técnico de mantenimiento en planta. Cada paro se escalaba por teléfono y la línea quedaba detenida entre una y dos horas esperando instrucciones.", "creadoEn": "2026-11-21T22:30:00.000Z", "ediciones": 0, "ejemplo": true, "proceso": "Mantenimiento de equipos", "recomendaciones": "Si después de los cuatro puntos la falla persiste, no insistir: detener y escalar. Registrar siempre en qué punto se resolvió, porque ese dato señala la causa de fondo.", "resultado": "Pendiente de medir durante el piloto. En las dos primeras semanas el turno de la noche resolvió sin escalar la mayoría de los paros.", "reusos": {}, "tipo": "Solución a problema", "titulo": "Paro de línea por falla en la empacadora: diagnóstico en quince minutos", "utiles": {}, "vistas": {}}, "a-ej-induccion": {"acceso": "Toda la organización", "accion": "Plan día por día para la primera semana: día 1 recorrido y normas de seguridad, día 2 sistema de inventario, día 3 alistamiento acompañado, día 4 despacho acompañado, día 5 operación con supervisión puntual. Cada día tiene una lista de verificación firmada por el operario guía.", "actualizadoEn": "2026-11-18T11:20:00.000Z", "area": "Talento humano", "autorEtiqueta": "Área de talento humano", "autorId": null, "claves": ["inducción", "bodega", "seguridad", "personal nuevo"], "comentaristas": {}, "contexto": "El personal nuevo de bodega tardaba varias semanas en operar con autonomía y dependía de preguntarle a un compañero con experiencia, que perdía tiempo de su propia labor.", "creadoEn": "2026-11-18T11:20:00.000Z", "ejemplo": true, "proceso": "Inducción y capacitación", "recomendaciones": "Revisar la lista de verificación con el área de seguridad cada semestre y después de cualquier cambio en el layout de la bodega.", "resultado": "El personal nuevo opera con autonomía al terminar la primera semana.", "reusos": {}, "tipo": "Buena práctica", "titulo": "Inducción de personal nuevo en bodega: los primeros cinco días", "utiles": {}, "vistas": {}}, "a-ej-pedidos": {"acceso": "Toda la organización", "accion": "1. Consultar el estado del pedido en el sistema y anotar la fecha comprometida.\n2. Confirmar con logística la fecha real de despacho y la causa del retraso.\n3. Revisar si el caso cumple los criterios para escalar (retraso mayor a 72 horas, pedido de cliente institucional o segunda queja por el mismo pedido).\n4. Responder al cliente con una fecha estimada concreta, la causa en lenguaje sencillo y el canal de seguimiento.\n5. Registrar la respuesta en la ficha del cliente para que cualquier compañero pueda retomar el caso.", "actualizadoEn": "2026-11-10T09:30:00.000Z", "area": "Servicio al cliente", "autorEtiqueta": "Equipo de servicio al cliente", "autorId": null, "claves": ["retraso de entrega", "pedido", "logística", "respuesta al cliente"], "comentaristas": {}, "contexto": "En el área de servicio al cliente llegan consultas frecuentes sobre retrasos en entregas. Cada persona responde de una forma distinta, lo que genera respuestas contradictorias y consultas internas repetidas al área de logística.", "creadoEn": "2026-10-02T14:10:00.000Z", "ejemplo": true, "proceso": "Atención de PQR", "recomendaciones": "No prometer fechas sin confirmación de logística. Si el retraso supera 72 horas, escalar al líder del área el mismo día. Guardar el texto de la respuesta para reutilizarlo como plantilla.", "resultado": "Las respuestas quedaron unificadas y bajaron las consultas internas repetidas hacia logística. Pendiente de medir con la línea base de la prueba piloto.", "reusos": {}, "tipo": "Procedimiento", "titulo": "Verificación y respuesta ante retraso en la entrega de un pedido", "utiles": {}, "vistas": {}}, "a-ej-proveedor": {"acceso": "Toda la organización", "accion": "Se estableció una alerta a 90 días del vencimiento de cada contrato crítico. En ese punto se revisa el consumo real del año, se piden al menos dos cotizaciones de referencia y se abre la conversación con el proveedor actual con esa información en la mano.", "actualizadoEn": "2026-05-20T14:00:00.000Z", "area": "Compras y proveedores", "autorEtiqueta": "Área de compras", "autorId": null, "claves": ["proveedor", "contrato", "negociación", "prórroga"], "comentaristas": {}, "contexto": "Un contrato de suministro se dejó vencer antes de iniciar la renegociación. Al quedar sin acuerdo vigente, la empresa perdió capacidad de negociar: el proveedor aplicó su tarifa de lista y hubo que aceptarla para no frenar la operación.", "creadoEn": "2026-05-20T14:00:00.000Z", "ediciones": 0, "ejemplo": true, "proceso": "Compras y negociación", "recomendaciones": "La fuerza de la negociación está en el tiempo, no en el argumento. Sin alternativa real cotizada, la conversación es solo una solicitud de descuento.", "resultado": "En las dos renovaciones siguientes se negoció con acuerdo vigente y con alternativas documentadas.", "reusos": {}, "tipo": "Lección aprendida", "titulo": "Prórroga con un proveedor crítico: negociar antes del vencimiento, no después", "utiles": {}, "vistas": {}}}, "data/editors-only/revisiones": {"a-ej-pedidos": {"estado": "aprobado", "nota": "Revisado con el líder de servicio al cliente. El procedimiento es claro, no contiene datos de clientes y corresponde a un proceso vigente.", "proximaRevision": "2027-05-12", "revisorId": null, "revisorEtiqueta": "Responsable de conocimiento", "revisadoEn": "2026-11-12T15:00:00.000Z"}, "a-ej-induccion": {"estado": "ajustes", "nota": "Falta precisar quién es el responsable de actualizar la lista de verificación y con qué periodicidad se revisa con seguridad industrial.", "proximaRevision": "", "revisorId": null, "revisorEtiqueta": "Responsable de conocimiento", "revisadoEn": "2026-11-19T09:00:00.000Z"}, "a-ej-acceso": {"estado": "aprobado", "nota": "Validado con el responsable de seguridad de la información. No contiene credenciales ni nombres de usuarios.", "proximaRevision": "2027-03-15", "revisorId": null, "revisorEtiqueta": "Responsable de conocimiento", "revisadoEn": "2026-09-18T10:00:00.000Z"}, "a-ej-proveedor": {"estado": "aprobado", "nota": "Aprobado sin datos del proveedor ni valores del contrato. Revisar vigencia tras la actualización de la política de compras.", "proximaRevision": "2026-11-20", "revisorId": null, "revisorEtiqueta": "Responsable de conocimiento", "revisadoEn": "2026-05-25T09:00:00.000Z"}, "a-ej-auditoria": {"estado": "aprobado", "nota": "Pertinente y verificable. Se unificó con una nota previa del mismo tema.", "proximaRevision": "2027-02-07", "revisorId": null, "revisorEtiqueta": "Responsable de conocimiento", "revisadoEn": "2026-08-10T16:00:00.000Z"}, "a-ej-correos": {"estado": "aprobado", "nota": "Aprobado. Se retiró del texto original un ejemplo que incluía el nombre de un proveedor real.", "proximaRevision": "2027-04-28", "revisorId": null, "revisorEtiqueta": "Responsable de conocimiento", "revisadoEn": "2026-10-30T11:00:00.000Z"}}, "aportes/a-ej-pedidos/comentarios": {"c-ej-1": {"tipo": "comentario", "texto": "Funcionó igual para pedidos institucionales. El único cambio: en esos casos hay que avisar también al asesor de la cuenta antes de responder al contacto operativo.", "autorId": null, "autorEtiqueta": "Equipo de servicio al cliente", "creadoEn": "2026-11-15T10:30:00.000Z"}, "c-ej-2": {"tipo": "actualizacion", "texto": "Desde noviembre el estado del pedido se consulta en el módulo nuevo, no en el reporte diario. Convendría actualizar el paso 1 antes de la próxima revisión de vigencia.", "autorId": null, "autorEtiqueta": "Área de logística", "creadoEn": "2026-11-19T08:05:00.000Z"}}}};</script>
+<script>/* ===========================================================
+   MEMORA — adaptador autónomo
+   Fuera de claude.ai no existe el almacén compartido de la plataforma.
+   Este adaptador implementa la misma interfaz sobre localStorage:
+   los datos quedan en ESTE navegador y no se comparten entre personas.
+   =========================================================== */
+(function(){
+"use strict";
+if (window.claude && window.claude.use) return; // dentro de Claude: no tocar nada
+var KEY="memora.v1";
+var store=null, listeners=[];
+function cargar(){
+  if(store) return store;
+  try{ store=JSON.parse(localStorage.getItem(KEY)||"null"); }catch(e){ store=null; }
+  if(!store||!store.c){ store={c:{}}; sembrar(); guardar(); }
+  return store;
+}
+function guardar(){ try{ localStorage.setItem(KEY,JSON.stringify(store)); }catch(e){} }
+function col(p){ var s=cargar(); if(!s.c[p]) s.c[p]={}; return s.c[p]; }
+function partes(path){ var a=path.split("/"); return {id:a.pop(), col:a.join("/")}; }
+function avisar(){ listeners.slice().forEach(function(l){ try{ l(); }catch(e){} }); }
+function clonar(o){ return JSON.parse(JSON.stringify(o)); }
+function fusionar(dst,src){
+  for(var k in src){
+    var v=src[k];
+    if(v&&typeof v==="object"&&!Array.isArray(v)){ if(!dst[k]||typeof dst[k]!=="object"||Array.isArray(dst[k])) dst[k]={}; fusionar(dst[k],v); }
+    else dst[k]=v;
+  }
+  return dst;
+}
+function snapDocs(obj,ord,lim){
+  var ids=Object.keys(obj);
+  if(ord){ ids.sort(function(a,b){ var x=obj[a][ord.f],y=obj[b][ord.f];
+      if(x===undefined&&y===undefined) return 0; if(x===undefined) return 1; if(y===undefined) return -1;
+      var r=(x<y?-1:(x>y?1:0)); return ord.d==="desc"?-r:r; }); }
+  else ids.sort();
+  if(lim) ids=ids.slice(0,lim);
+  var docs=ids.map(function(id){ var d=obj[id]; return {id:id,exists:true,data:function(){return d;},metadata:{fromCache:false,hasPendingWrites:false}}; });
+  return {docs:docs,size:docs.length,empty:!docs.length,docChanges:function(){return [];},metadata:{fromCache:false,hasPendingWrites:false}};
+}
+function query(path,ord,lim){
+  return {
+    where:function(){ return query(path,ord,lim); },
+    orderBy:function(f,d){ return query(path,{f:f,d:d||"asc"},lim); },
+    limit:function(n){ return query(path,ord,n); },
+    get:function(){ return Promise.resolve(snapDocs(col(path),ord,lim)); },
+    onSnapshot:function(next,err){
+      var fn=function(){ try{ next(snapDocs(col(path),ord,lim)); }catch(e){} };
+      listeners.push(fn); setTimeout(fn,0);
+      return function(){ var i=listeners.indexOf(fn); if(i>=0) listeners.splice(i,1); };
+    },
+    doc:function(id){ return docRef(path+"/"+(id||("x-"+Date.now().toString(36)+Math.random().toString(36).slice(2,7)))); },
+    add:function(data){ var r=this.doc(); return r.set(data).then(function(){ return r; }); }
+  };
+}
+function docRef(path){
+  var p=partes(path);
+  return {
+    id:p.id, path:path,
+    get:function(){ var c=col(p.col), d=c[p.id];
+      return Promise.resolve({id:p.id,exists:!!d,data:function(){return d;},metadata:{fromCache:false,hasPendingWrites:false}}); },
+    set:function(data){ col(p.col)[p.id]=clonar(data); guardar(); avisar(); return Promise.resolve(); },
+    update:function(data){ var c=col(p.col); if(!c[p.id]) return Promise.reject({code:"invalid_argument",message:"no existe"});
+      fusionar(c[p.id],clonar(data)); guardar(); avisar(); return Promise.resolve(); },
+    delete:function(){ delete col(p.col)[p.id]; guardar(); avisar(); return Promise.resolve(); },
+    acquire:function(){ return Promise.resolve({acquired:true}); },
+    onSnapshot:function(next){
+      var fn=function(){ var c=col(p.col),d=c[p.id];
+        try{ next({id:p.id,exists:!!d,data:function(){return d;},metadata:{fromCache:false,hasPendingWrites:false}}); }catch(e){} };
+      listeners.push(fn); setTimeout(fn,0);
+      return function(){ var i=listeners.indexOf(fn); if(i>=0) listeners.splice(i,1); };
+    },
+    collection:function(sub){ return query(path+"/"+sub); }
+  };
+}
+var db={ doc:function(path){ return docRef(path); }, collection:function(path){ return query(path); } };
+var user={
+  id:function(){ return Promise.resolve("local"); },
+  me:function(){ return Promise.resolve({name:"Usuario de demostración"}); },
+  isOwner:function(){ return Promise.resolve(true); },
+  canEdit:function(){ return Promise.resolve(true); },
+  can:function(){ return Promise.resolve(true); },
+  profiles:function(ids){ var o={}; (ids||[]).forEach(function(i){ o[i]={name:i==="local"?"Usuario de demostración":""}; }); return Promise.resolve(o); },
+  search:function(){ return Promise.resolve([]); }
+};
+window.claude={ use:function(n){
+  if(n==="db") return Promise.resolve(db);
+  if(n==="user") return Promise.resolve(user);
+  return Promise.resolve(null);   // sample, room, assets… no existen fuera de Claude
+}};
+function sembrar(){ var s=window.MEMORA_SEMILLA; store.c=(s&&s.c)?s.c:(s||{}); }
+})();
+</script>
+<title>MEMORA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: app shell empresarial en blanco — barra superior fija, pestañas de módulo, lienzo de 1140px con tarjetas de borde fino sobre papel blanco. Tema claro único y deliberado. */
+:root{
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --surface-2:#f6f8fa;
+  --surface-3:#fbfcfd;
+  --ink:#111827;
+  --ink-2:#4b5667;
+  --ink-3:#7d8899;
+  --line:#e4e8ee;
+  --line-strong:#cfd6e0;
+  --brand:#0b5f5a;
+  --brand-ink:#ffffff;
+  --brand-soft:#e6f1f0;
+  --focus:#0b5f5a;
+  /* estados: validados con el script de paleta (superficie clara) + etiqueta siempre visible */
+  --ok:#15803d; --ok-soft:#e9f5ed;
+  --pend:#1d6fa5; --pend-soft:#e8f1f8;
+  --warnc:#b45309; --warn-soft:#fcf2e6;
+  --neutral:#64748b; --neutral-soft:#f1f3f6;
+  --bar:#0b5f5a;
+  --font-h:"Manrope",system-ui,sans-serif;
+  --font-b:"Inter",system-ui,sans-serif;
+  --font-m:"IBM Plex Mono",ui-monospace,monospace;
+  --r:7px;
+  --shadow:0 1px 2px rgba(17,24,39,.05);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+h1,h2,h3,h4{font-family:var(--font-h);line-height:1.2;text-wrap:balance;margin:0}
+button{font:inherit;color:inherit}
+.shell{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* ---------- barra superior ---------- */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar .shell{display:flex;align-items:center;gap:1rem;padding-block:.7rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.6rem;margin-right:auto;min-width:0;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.mark{width:28px;height:28px;border-radius:6px;background:var(--brand);color:var(--brand-ink);font-family:var(--font-h);font-weight:800;font-size:13px;display:grid;place-items:center;letter-spacing:-.02em;flex:none}
+.brand b{font-family:var(--font-h);font-weight:800;font-size:1.02rem;letter-spacing:.02em;display:block}
+.brand small{display:block;font-size:.69rem;color:var(--ink-3);letter-spacing:.02em;line-height:1.2}
+.who{display:flex;align-items:center;gap:.5rem;font-size:.76rem;color:var(--ink-2);min-width:0}
+.rolechip{font-family:var(--font-m);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .45rem;border:1px solid var(--line-strong);border-radius:4px;color:var(--ink-2);white-space:nowrap;background:var(--surface-2)}
+.tabs{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:calc(env(safe-area-inset-top,0px) + 50px);z-index:40}
+.tabs .shell{display:flex;gap:.1rem;overflow-x:auto;scrollbar-width:none}
+.tabs .shell::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;border-bottom:2px solid transparent;color:var(--ink-2);padding:.62rem .8rem;font-weight:500;font-size:.85rem;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:.4rem}
+.tab:hover{color:var(--ink)}
+.tab[aria-current="page"]{color:var(--brand);border-bottom-color:var(--brand);font-weight:600}
+.tab .cnt{font-family:var(--font-m);font-size:.68rem;background:var(--brand-soft);color:var(--brand);padding:.05rem .32rem;border-radius:999px;font-weight:600}
+
+/* ---------- estructura ---------- */
+main{padding-block:1.5rem 3rem;background:var(--bg)}
+.vhead{display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.vhead>div{flex:1 1 380px;min-width:0}
+.vhead h2{font-size:1.45rem;letter-spacing:-.025em}
+.vhead p{margin:.25rem 0 0;color:var(--ink-2);font-size:.88rem;max-width:72ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.pad{padding:1.1rem 1.15rem}
+.sectitle{font-family:var(--font-m);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 .6rem}
+.muted{color:var(--ink-2)}
+
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);padding:.45rem .8rem;border-radius:6px;cursor:pointer;font-size:.84rem;font-weight:500}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:600}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.small{padding:.3rem .55rem;font-size:.78rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.on{background:var(--brand-soft);border-color:var(--brand);color:var(--brand);font-weight:600}
+.link{background:none;border:0;padding:0;color:var(--brand);cursor:pointer;font-weight:500;font-size:inherit;text-align:left}
+.link:hover{text-decoration:underline}
+
+/* ---------- filtros ---------- */
+.filters{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;margin-bottom:.7rem}
+.search{flex:1 1 260px;min-width:0;position:relative;display:flex}
+.filters .search input[type=text]{width:100%;min-width:0;padding:.55rem .75rem .55rem 2.05rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--ink);font-size:.88rem}
+.search svg{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:var(--ink-3)}
+select,input[type=text],input[type=date],textarea{font-family:var(--font-b);font-size:.86rem;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:.5rem .6rem;max-width:100%}
+select{cursor:pointer}
+textarea{width:100%;resize:vertical;line-height:1.6}
+.quick{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-bottom:.9rem}
+.qchip{font-size:.78rem;padding:.26rem .6rem;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.qchip:hover{background:var(--surface-2);color:var(--ink)}
+.qchip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:600}
+.active-filters{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin-bottom:.9rem;font-size:.8rem;color:var(--ink-3)}
+.fchip{display:inline-flex;align-items:center;gap:.35rem;background:var(--brand-soft);color:var(--brand);border:1px solid color-mix(in srgb,var(--brand) 25%,transparent);border-radius:999px;padding:.2rem .3rem .2rem .6rem;font-size:.78rem;font-weight:500}
+.fchip button{border:0;background:none;cursor:pointer;color:inherit;line-height:1;font-size:1rem;padding:0 .2rem}
+
+/* ---------- chips ---------- */
+.chip{display:inline-flex;align-items:center;gap:.33rem;font-family:var(--font-m);font-size:.67rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;padding:.18rem .42rem;border-radius:4px;white-space:nowrap;border:1px solid transparent}
+.chip .dot{width:7px;height:7px;border-radius:2px;flex:none}
+.chip.ok{background:var(--ok-soft);color:var(--ok)} .chip.ok .dot{background:var(--ok)}
+.chip.pend{background:var(--pend-soft);color:var(--pend)} .chip.pend .dot{background:var(--pend)}
+.chip.adj{background:var(--warn-soft);color:var(--warnc)} .chip.adj .dot{background:var(--warnc)}
+.chip.arch{background:var(--neutral-soft);color:var(--neutral)} .chip.arch .dot{background:var(--neutral)}
+.chip.plain{background:var(--surface-2);color:var(--ink-2);border-color:var(--line)}
+.chip.ej{background:var(--surface);color:var(--ink-3);border:1px dashed var(--line-strong)}
+button.chip{cursor:pointer}
+button.chip:hover{filter:brightness(.96)}
+
+/* ---------- lista ---------- */
+.list{display:grid;gap:.6rem}
+.item{display:grid;gap:.5rem;padding:.95rem 1.05rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);cursor:pointer}
+.item:hover{border-color:var(--line-strong);background:var(--surface-3)}
+.item:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.item .row1{display:flex;gap:.6rem;align-items:flex-start;flex-wrap:wrap}
+.item h3{font-size:1rem;letter-spacing:-.015em;flex:1 1 320px;min-width:0}
+.item .snip{color:var(--ink-2);font-size:.86rem;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item .row2{display:flex;gap:.45rem .85rem;flex-wrap:wrap;align-items:center;font-family:var(--font-m);font-size:.71rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tags{display:flex;gap:.3rem;flex-wrap:wrap}
+.tag{font-family:var(--font-m);font-size:.68rem;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:.1rem .34rem;cursor:pointer}
+.tag:hover{background:var(--brand-soft);color:var(--brand);border-color:color-mix(in srgb,var(--brand) 25%,transparent)}
+.mini{background:none;border:0;padding:0;color:var(--ink-3);font:inherit;cursor:pointer}
+.mini:hover{color:var(--brand);text-decoration:underline}
+.inline-act{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.15rem}
+
+/* ---------- vacíos / avisos ---------- */
+.empty{text-align:center;padding:3rem 1.2rem;border:1px dashed var(--line-strong);border-radius:var(--r);background:var(--surface-3)}
+.empty h3{font-size:1.05rem;margin-bottom:.4rem}
+.empty p{color:var(--ink-2);margin:0 auto 1rem;max-width:52ch;font-size:.88rem}
+.banner{display:flex;gap:.6rem;align-items:flex-start;padding:.7rem .85rem;border-radius:6px;font-size:.84rem;margin-bottom:1rem;border:1px solid}
+.banner.info{background:var(--pend-soft);border-color:color-mix(in srgb,var(--pend) 28%,transparent)}
+.banner.warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warnc) 32%,transparent)}
+.banner.ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 28%,transparent)}
+.banner b{font-family:var(--font-m);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.15rem}
+
+/* ---------- formulario ---------- */
+form.ap{display:grid;gap:1.05rem}
+.fgrid{display:grid;gap:1.05rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.field{display:grid;gap:.3rem;min-width:0}
+.field label{font-weight:600;font-size:.83rem}
+.field .hint{font-size:.78rem;color:var(--ink-3)}
+.check{display:flex;gap:.6rem;align-items:flex-start;padding:.8rem .9rem;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;font-size:.85rem}
+.check input{margin-top:.2rem;flex:none;width:16px;height:16px;accent-color:var(--brand)}
+.formact{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.err{color:var(--warnc);font-size:.82rem;font-weight:500}
+.kwbox{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;border:1px solid var(--line-strong);border-radius:6px;padding:.35rem .4rem;background:var(--surface)}
+.kwbox input{border:0;padding:.2rem .3rem;flex:1 1 110px;min-width:0;background:none;outline:none;font-size:.86rem;color:var(--ink)}
+.kw{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--font-m);font-size:.72rem;background:var(--brand-soft);color:var(--brand);border-radius:4px;padding:.14rem .3rem}
+.kw button{border:0;background:none;color:inherit;cursor:pointer;padding:0;line-height:1;font-size:.9rem}
+.sugg{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.1rem}
+.sugg button{font-family:var(--font-m);font-size:.71rem;background:var(--surface-2);border:1px dashed var(--line-strong);color:var(--ink-2);border-radius:4px;padding:.12rem .34rem;cursor:pointer}
+.sugg button:hover{border-style:solid;color:var(--brand);border-color:var(--brand)}
+.prog{display:grid;gap:.35rem}
+.prog .track{height:6px;background:var(--surface-2);border-radius:3px;overflow:hidden}
+.prog .track i{display:block;height:100%;background:var(--brand);border-radius:0 3px 3px 0}
+.prog .cap{font-size:.78rem;color:var(--ink-3);display:flex;justify-content:space-between;gap:1rem}
+
+/* ---------- detalle ---------- */
+.detail{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr) 304px;align-items:start}
+@media (max-width:880px){.detail{grid-template-columns:1fr}}
+.crumbs{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;font-size:.81rem;color:var(--ink-3);margin-bottom:.8rem}
+.crumbs button{background:none;border:0;padding:0;color:var(--brand);cursor:pointer;font:inherit}
+.crumbs button:hover{text-decoration:underline}
+.dblock{border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem}
+.dblock:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.dblock h4{font-family:var(--font-m);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem}
+.dblock p{margin:0;white-space:pre-wrap;font-size:.92rem;line-height:1.68}
+.side{display:grid;gap:1rem}
+dl.facts{margin:0;display:grid;gap:.6rem}
+dl.facts div{display:grid;gap:.1rem}
+dl.facts dt{font-family:var(--font-m);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+dl.facts dd{margin:0;font-size:.86rem;font-variant-numeric:tabular-nums}
+.actrow{display:flex;gap:.45rem;flex-wrap:wrap}
+.metric{display:flex;justify-content:space-between;gap:1rem;font-size:.84rem;padding:.32rem 0;border-bottom:1px dashed var(--line)}
+.metric:last-of-type{border-bottom:0}
+.metric b{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-weight:600}
+.comments{display:grid;gap:.6rem;margin-top:.6rem}
+.cmt{border-left:2px solid var(--line-strong);padding:.1rem 0 .1rem .7rem}
+.cmt .meta{font-family:var(--font-m);font-size:.69rem;color:var(--ink-3);display:flex;gap:.5rem;flex-wrap:wrap}
+.cmt p{margin:.15rem 0 0;font-size:.88rem;white-space:pre-wrap}
+.cmt.reuso{border-left-color:var(--ok)}
+.cmt.actualizacion{border-left-color:var(--warnc)}
+.rel{display:grid;gap:.5rem}
+.rel button{text-align:left;background:none;border:0;padding:.45rem .5rem;border-radius:5px;cursor:pointer;display:grid;gap:.15rem}
+.rel button:hover{background:var(--surface-2)}
+.rel .t{font-weight:600;font-size:.85rem;line-height:1.35}
+.rel .m{font-family:var(--font-m);font-size:.69rem;color:var(--ink-3)}
+
+/* ---------- indicadores ---------- */
+.tiles{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,164px),1fr));margin-bottom:1rem}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:.9rem 1rem;box-shadow:var(--shadow);min-width:0;text-align:left;cursor:pointer;display:block;width:100%}
+.tile:hover{border-color:var(--brand)}
+.tile .lbl{font-family:var(--font-m);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:.35rem}
+.tile .val{font-family:var(--font-h);font-weight:800;font-size:1.95rem;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1;display:block}
+.tile .sub{font-size:.76rem;color:var(--ink-2);margin-top:.3rem;display:block}
+.tile .freq{font-family:var(--font-m);font-size:.64rem;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;display:block;margin-top:.2rem}
+.charts{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
+.segbar{display:flex;height:12px;border-radius:4px;overflow:hidden;gap:2px;background:var(--surface-2);margin:.7rem 0 .6rem}
+.seglegend{display:grid;gap:.2rem}
+.seglegend button{display:flex;align-items:center;gap:.45rem;font-size:.83rem;background:none;border:0;padding:.25rem .3rem;border-radius:5px;cursor:pointer;width:100%;text-align:left}
+.seglegend button:hover{background:var(--surface-2)}
+.seglegend .sw{width:9px;height:9px;border-radius:2px;flex:none}
+.seglegend .n{margin-left:auto;font-family:var(--font-m);font-variant-numeric:tabular-nums;font-weight:600}
+.bars{display:grid;gap:.25rem;margin-top:.7rem}
+.barrow{display:grid;grid-template-columns:minmax(90px,1fr) minmax(0,2.1fr) auto;gap:.6rem;align-items:center;font-size:.83rem;background:none;border:0;padding:.28rem .3rem;border-radius:5px;cursor:pointer;width:100%;text-align:left}
+.barrow:hover{background:var(--surface-2)}
+.barrow .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2)}
+.bartrack{height:10px;background:var(--surface-2);border-radius:3px;position:relative}
+.bartrack i{position:absolute;inset:0 auto 0 0;background:var(--bar);border-radius:0 4px 4px 0;display:block}
+.barrow .v{font-family:var(--font-m);font-variant-numeric:tabular-nums;font-weight:600;min-width:1.6rem;text-align:right}
+.meter{margin-top:.7rem}
+.meter .track{height:10px;background:var(--surface-2);border-radius:3px;overflow:hidden}
+.meter .track i{display:block;height:100%;background:var(--bar);border-radius:0 4px 4px 0}
+.meter .cap{display:flex;justify-content:space-between;font-size:.79rem;color:var(--ink-2);margin-top:.35rem;gap:1rem;flex-wrap:wrap}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);margin-top:1rem}
+table{border-collapse:collapse;width:100%;min-width:32rem;font-size:.85rem}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--font-m);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:0}
+td.num{font-family:var(--font-m);font-variant-numeric:tabular-nums;white-space:nowrap}
+caption{caption-side:bottom;text-align:left;padding:.6rem .8rem;color:var(--ink-3);font-size:.79rem}
+#tip{position:fixed;z-index:70;pointer-events:none;background:var(--ink);color:#fff;font-family:var(--font-m);font-size:.72rem;padding:.3rem .45rem;border-radius:4px;opacity:0;transition:opacity .12s;max-width:16rem}
+
+/* ---------- asistente ---------- */
+.ask{display:grid;gap:.7rem}
+.ask textarea{font-size:.95rem}
+.exq{display:flex;gap:.4rem;flex-wrap:wrap}
+.exq button{font-size:.8rem;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:.26rem .6rem;cursor:pointer;text-align:left}
+.exq button:hover{border-color:var(--brand);color:var(--brand)}
+.answer{border-left:3px solid var(--brand);background:var(--surface-3);padding:1rem 1.1rem;border-radius:0 var(--r) var(--r) 0}
+.answer p{margin:0;font-size:.95rem;line-height:1.7;white-space:pre-wrap}
+.fuentes{display:grid;gap:.5rem;margin-top:.9rem}
+.fuente{display:grid;gap:.2rem;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.6rem .7rem;cursor:pointer;width:100%}
+.fuente:hover{border-color:var(--brand)}
+.fuente .t{font-weight:600;font-size:.88rem}
+.fuente .p{font-size:.82rem;color:var(--ink-2)}
+.fuente .m{font-family:var(--font-m);font-size:.68rem;color:var(--ink-3)}
+.ia-nota{font-size:.78rem;color:var(--ink-3);margin-top:.8rem;display:flex;gap:.4rem;align-items:flex-start}
+.thinking{display:inline-flex;gap:.35rem;align-items:center;color:var(--ink-3);font-size:.86rem}
+.dotpulse{width:6px;height:6px;border-radius:50%;background:var(--brand);animation:pulse 1s infinite ease-in-out}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.dotpulse{animation:none;opacity:.7}}
+
+/* ---------- expertos ---------- */
+.experts{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,268px),1fr))}
+.xcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:.95rem 1rem;box-shadow:var(--shadow);display:grid;gap:.5rem;min-width:0}
+.xcard .nm{font-family:var(--font-h);font-weight:700;font-size:1rem;letter-spacing:-.01em;display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
+.xstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.3rem .8rem}
+.xstats div{display:flex;justify-content:space-between;gap:.5rem;font-size:.8rem;color:var(--ink-2);border-bottom:1px dashed var(--line);padding-bottom:.18rem}
+.xstats b{font-family:var(--font-m);font-variant-numeric:tabular-nums}
+.cover{display:grid;gap:.3rem;margin-top:.7rem}
+.coverrow{display:grid;grid-template-columns:minmax(120px,1.4fr) auto auto;gap:.5rem;align-items:center;font-size:.83rem;padding:.3rem;border-radius:5px;background:none;border:0;cursor:pointer;text-align:left;width:100%}
+.coverrow:hover{background:var(--surface-2)}
+.coverrow .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2)}
+.coverrow .st{font-family:var(--font-m);font-size:.69rem;letter-spacing:.04em;text-transform:uppercase}
+.coverrow .st.si{color:var(--ok)} .coverrow .st.no{color:var(--warnc)}
+.coverrow b{font-family:var(--font-m);font-variant-numeric:tabular-nums;min-width:1.4rem;text-align:right}
+.gaps{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.7rem}
+.gaps button{font-size:.8rem;border:1px dashed var(--line-strong);background:var(--surface);color:var(--ink-2);border-radius:6px;padding:.3rem .55rem;cursor:pointer}
+.gaps button:hover{border-style:solid;border-color:var(--brand);color:var(--brand)}
+
+/* ---------- guía ---------- */
+.guide{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+.guide ol,.guide ul{margin:.3rem 0 0;padding-left:1.15rem}
+.guide li{margin-bottom:.35rem;font-size:.88rem}
+.guide h3{font-size:.98rem;margin-bottom:.2rem}
+.guide p{font-size:.88rem;color:var(--ink-2);margin:.2rem 0 0}
+.flow{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))}
+.flow div{background:var(--surface);padding:.8rem .85rem}
+.flow .n{font-family:var(--font-m);font-size:.66rem;color:var(--brand);letter-spacing:.1em;display:block;margin-bottom:.3rem}
+.flow h4{font-size:.9rem;margin-bottom:.2rem}
+.flow p{font-size:.81rem;color:var(--ink-2);margin:0}
+footer{border-top:1px solid var(--line);margin-top:2rem;padding-block:1.2rem;background:var(--surface)}
+footer .shell{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between;font-family:var(--font-m);font-size:.71rem;color:var(--ink-3)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="topbar">
+  <div class="shell">
+    <button class="brand" data-ir="buscar" title="Ir al banco de conocimiento">
+      <span class="mark" aria-hidden="true">M</span>
+      <span><b>MEMORA</b><small>Memoria del conocimiento organizacional</small></span>
+    </button>
+    <div class="who" id="who"><span class="rolechip">Conectando…</span></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Módulos">
+  <div class="shell" id="tabs"></div>
+</nav>
+
+<main class="shell" id="view"></main>
+
+<footer>
+  <div class="shell">
+    <span>MEMORA · Prototipo funcional de gestión del conocimiento</span>
+    <span>Universidad Autónoma de Manizales · 2026</span>
+  </div>
+</footer>
+<div id="tip" role="status"></div>
+
+<script>
+(function(){
+"use strict";
+/* ============ catálogos ============ */
+const AREAS=["Servicio al cliente","Logística y distribución","Comercial y ventas","Producción y operaciones","Talento humano","Finanzas y contabilidad","Tecnología y sistemas","Calidad y procesos","Compras y proveedores","Dirección y planeación"];
+const PROCESOS=["Atención de PQR","Gestión de pedidos","Despacho y transporte","Control de inventarios","Facturación y cartera","Selección y contratación","Inducción y capacitación","Soporte técnico","Mantenimiento de equipos","Auditoría interna","Compras y negociación","Cierre contable","Mejora continua","Seguridad de la información","Otro"];
+const TIPOS=["Lección aprendida","Procedimiento","Solución a problema","Buena práctica","Recomendación"];
+const ACCESOS=["Toda la organización","Solo mi área"];
+const ESTADOS={aprobado:{t:"Aprobado",c:"ok"},pendiente:{t:"Pendiente",c:"pend"},ajustes:{t:"Requiere ajustes",c:"adj"},archivado:{t:"Archivado",c:"arch"}};
+const COLORES={aprobado:"var(--ok)",pendiente:"var(--pend)",ajustes:"var(--warnc)",archivado:"var(--neutral)"};
+const MESES=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+/* Plantillas por tipo de conocimiento: guían la redacción sin imponer contenido. */
+const PLANTILLAS={
+ "Procedimiento":{contexto:"¿En qué situación se aplica este procedimiento y con qué frecuencia ocurre?",accion:"1. Primer paso, con el sistema o el documento que se usa.\n2. Segundo paso, indicando con quién se coordina.\n3. Tercer paso.\n4. Criterio para escalar el caso.",resultado:"¿Qué se obtiene al seguirlo completo?",recomendaciones:"Qué verificar antes de empezar y qué errores evitar."},
+ "Lección aprendida":{contexto:"¿Qué se intentó, qué salió distinto a lo esperado y por qué?",accion:"¿Qué se cambió a partir de esa experiencia?",resultado:"¿Qué efecto tuvo el cambio?",recomendaciones:"¿Qué le dirías a quien esté a punto de pasar por lo mismo?"},
+ "Solución a problema":{contexto:"Describe el problema, su síntoma visible y desde cuándo se presenta.",accion:"Diagnóstico realizado y solución aplicada, paso a paso.",resultado:"¿Se resolvió de fondo o es una solución temporal?",recomendaciones:"Cómo prevenir que vuelva a ocurrir."},
+ "Buena práctica":{contexto:"¿Qué hacía difícil o lento este trabajo antes?",accion:"En qué consiste la práctica y cómo se ejecuta.",resultado:"¿Qué mejoró y cómo se nota?",recomendaciones:"Condiciones necesarias para que funcione en otra área."},
+ "Recomendación":{contexto:"¿A qué decisión o situación responde esta recomendación?",accion:"Qué recomiendas hacer, concretamente.",resultado:"Qué se espera obtener.",recomendaciones:"Riesgos y límites de la recomendación."}
+};
+const VACIAS=["de","del","la","el","los","las","un","una","y","o","en","con","para","por","que","al","se","su","sus","lo","a","es","como","mas","más","sin","sobre"];
+
+/* ============ estado ============ */
+const S={
+  db:null,user:null,uid:null,canEdit:false,canWrite:null,ready:false,slow:false,dbOff:false,
+  aportes:new Map(),revisiones:new Map(),comentarios:[],perfiles:{},
+  unsubCmt:null,cmtId:null,vistasHechas:new Set(),
+  q:"",fArea:"",fProceso:"",fEstado:"",fTipo:"",fClave:"",fAutor:"",fMios:false,fVigencia:false,orden:"recientes",
+  sample:null,pregunta:"",respuesta:null,sampleBusy:false,sampleErr:"",
+  form:{claves:[]},formErr:"",busy:"",editId:null,cmtDraft:"",aviso:""
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const hoy=()=>new Date().toISOString().slice(0,10);
+function fecha(iso){ if(!iso) return "—"; const d=new Date(iso); if(isNaN(d)) return "—"; return d.getDate()+" "+MESES[d.getMonth()].slice(0,3)+" "+d.getFullYear(); }
+function mapCount(m){ return m&&typeof m==="object"?Object.keys(m).length:0; }
+function mapSum(m){ if(!m||typeof m!=="object") return 0; let t=0; for(const k in m){ const v=m[k]; t+=typeof v==="number"?v:1; } return t; }
+function tokens(s){ return String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").split(/[^a-z0-9ñ]+/).filter(w=>w.length>3&&VACIAS.indexOf(w)<0); }
+function estadoDe(id){
+  const r=S.revisiones.get(id),a=S.aportes.get(id);
+  if(!r||!ESTADOS[r.estado]) return "pendiente";
+  if(a&&r.revisadoEn&&a.actualizadoEn&&a.actualizadoEn>r.revisadoEn&&r.estado!=="archivado") return "pendiente";
+  return r.estado;
+}
+function reeditado(id){ const r=S.revisiones.get(id),a=S.aportes.get(id); return !!(r&&a&&r.revisadoEn&&a.actualizadoEn&&a.actualizadoEn>r.revisadoEn&&r.estado!=="archivado"&&r.estado!=="pendiente"); }
+function nombre(uid,fallback){ if(!uid) return fallback||"Colaborador"; const p=S.perfiles[uid]; return (p&&p.name)||fallback||"Colaborador"; }
+function puedoEditar(id){ const a=S.aportes.get(id); if(!a||!S.db||S.canWrite===false) return false; return S.canEdit||(!!S.uid&&a.autorId===S.uid); }
+function vencido(id){ const r=S.revisiones.get(id); return !!(estadoDe(id)==="aprobado"&&r&&r.proximaRevision&&r.proximaRevision<hoy()); }
+
+/* ============ arranque ============ */
+render();
+window.addEventListener("hashchange",()=>{ S.aviso=""; render(); });
+const loadTimer=setTimeout(()=>{ if(!S.ready){ S.slow=true; render(); } },10000);
+
+(async function init(){
+  let u=null;
+  try{ u=await window.claude?.use?.("user"); }catch(e){}
+  S.user=u;
+  if(u){
+    try{ S.uid=await u.id(); }catch(e){}
+    try{ S.canEdit=await u.canEdit(); }catch(e){}
+    try{ S.canWrite=await u.can("data.write"); }catch(e){}
+    try{ const me=await u.me(); if(me&&S.uid) S.perfiles[S.uid]={name:me.name||""}; }catch(e){}
+  }
+  try{ S.sample=await window.claude?.use?.("sample"); }catch(e){}
+  let db=null;
+  try{ db=await window.claude?.use?.("db"); }catch(e){}
+  if(!db){ S.dbOff=true; S.ready=true; clearTimeout(loadTimer); render(); return; }
+  S.db=db;
+  db.collection("aportes").orderBy("creadoEn","desc").limit(500).onSnapshot(snap=>{
+    S.aportes=new Map(); snap.docs.forEach(d=>S.aportes.set(d.id,d.data()||{}));
+    if(!snap.metadata.fromCache){ S.ready=true; S.slow=false; clearTimeout(loadTimer); }
+    resolverPerfiles(); render();
+  },err=>{ S.ready=true; S.dbOff=(err.code==="not_granted"||err.code==="revoked"||err.code==="capability_disabled"); clearTimeout(loadTimer); render(); });
+  db.collection("data/editors-only/revisiones").limit(500).onSnapshot(snap=>{
+    S.revisiones=new Map(); snap.docs.forEach(d=>S.revisiones.set(d.id,d.data()||{})); render();
+  },()=>{});
+  render();
+})();
+
+let perfPend=null;
+async function resolverPerfiles(){
+  if(!S.user||!S.user.profiles) return;
+  const ids=new Set();
+  S.aportes.forEach(a=>{ if(a.autorId) ids.add(a.autorId); });
+  S.revisiones.forEach(r=>{ if(r.revisorId) ids.add(r.revisorId); });
+  S.comentarios.forEach(c=>{ if(c.autorId) ids.add(c.autorId); });
+  const faltan=[...ids].filter(i=>!(i in S.perfiles));
+  if(!faltan.length||perfPend) return;
+  perfPend=true;
+  try{ const ps=await S.user.profiles(faltan); faltan.forEach(i=>{ S.perfiles[i]=ps&&ps[i]?ps[i]:{name:""}; }); render(); }
+  catch(e){ faltan.forEach(i=>{ S.perfiles[i]={name:""}; }); }
+  perfPend=null;
+}
+
+/* ============ enrutado ============ */
+function ruta(){
+  const h=(location.hash||"").replace(/^#/,"");
+  if(h.indexOf("aporte-")===0) return {v:"detalle",id:h.slice(7)};
+  if(["buscar","asistente","nuevo","revision","indicadores","expertos","guia"].includes(h)) return {v:h};
+  return {v:"buscar"};
+}
+function ir(h){ if(("#"+h)===location.hash){ S.aviso=""; render(); } else location.hash=h; }
+function limpiarFiltros(){ S.q="";S.fArea="";S.fProceso="";S.fEstado="";S.fTipo="";S.fClave="";S.fAutor="";S.fMios=false;S.fVigencia=false; }
+function autorKey(a){ return a.autorId||a.autorEtiqueta||""; }
+function autorNombre(k){ if(!k) return "Colaborador"; const p=S.perfiles[k]; return (p&&p.name)||k; }
+
+/* ============ render ============ */
+function render(){
+  const r=ruta();
+  pintarWho(); pintarTabs(r);
+  const v=$("view");
+  if(r.v==="detalle") v.innerHTML=vistaDetalle(r.id);
+  else if(r.v==="nuevo") v.innerHTML=vistaNuevo();
+  else if(r.v==="revision") v.innerHTML=vistaRevision();
+  else if(r.v==="indicadores") v.innerHTML=vistaIndicadores();
+  else if(r.v==="asistente") v.innerHTML=vistaAsistente();
+  else if(r.v==="expertos") v.innerHTML=vistaExpertos();
+  else if(r.v==="guia") v.innerHTML=vistaGuia();
+  else v.innerHTML=vistaBuscar();
+  if(r.v!=="detalle"&&S.unsubCmt){ S.unsubCmt(); S.unsubCmt=null; S.cmtId=null; S.comentarios=[]; }
+  conectar(r);
+}
+function pintarWho(){
+  const rol=S.canEdit?"Validador":(S.canWrite===false?"Solo lectura":(S.uid?"Colaborador":"Invitado"));
+  const me=S.uid?nombre(S.uid,""):"";
+  $("who").innerHTML=(me?'<span>'+esc(me)+'</span>':'')+'<span class="rolechip">'+esc(rol)+'</span>';
+}
+function pintarTabs(r){
+  const pend=[...S.aportes.keys()].filter(id=>estadoDe(id)==="pendiente").length;
+  const items=[{k:"buscar",t:"Banco de conocimiento"},{k:"asistente",t:"Consulta asistida"},{k:"nuevo",t:S.editId?"Editando aporte":"Compartir conocimiento"},{k:"revision",t:"Revisión y validación",n:pend},{k:"indicadores",t:"Indicadores"},{k:"expertos",t:"Mapa de expertos"},{k:"guia",t:"Guía de uso"}];
+  $("tabs").innerHTML=items.map(i=>{
+    const act=(r.v===i.k||(r.v==="detalle"&&i.k==="buscar"))?' aria-current="page"':"";
+    return '<button class="tab" data-ir="'+i.k+'"'+act+'>'+esc(i.t)+(i.n?'<span class="cnt">'+i.n+'</span>':'')+'</button>';
+  }).join("");
+}
+function avisos(){
+  let h="";
+  if(S.aviso) h+='<div class="banner ok"><span><b>Listo</b>'+esc(S.aviso)+'</span></div>';
+  if(S.dbOff) h+='<div class="banner warn"><span><b>Sin conexión al almacén</b>Esta vista no puede leer ni guardar datos compartidos. Abre la página desde el enlace del artefacto e inicia sesión para registrar y consultar aportes.</span></div>';
+  else if(S.canWrite===false) h+='<div class="banner info"><span><b>Perfil de solo lectura</b>Puedes consultar el banco de conocimiento, pero no registrar aportes ni valorar contenidos. Pide acceso de colaborador a quien administra la plataforma.</span></div>';
+  else if(S.slow&&!S.ready) h+='<div class="banner warn"><span><b>Datos no confirmados</b>El almacén no responde todavía. Lo que ves puede estar incompleto o desactualizado.</span></div>';
+  return h;
+}
+
+/* ============ utilidades de contenido ============ */
+function listaAportes(){ return [...S.aportes.entries()].map(([id,a])=>({id,a,estado:estadoDe(id),rev:S.revisiones.get(id)||{}})); }
+function filtrados(){
+  const q=S.q.trim().toLowerCase();
+  let arr=listaAportes();
+  if(S.fArea) arr=arr.filter(x=>x.a.area===S.fArea);
+  if(S.fProceso) arr=arr.filter(x=>x.a.proceso===S.fProceso);
+  if(S.fTipo) arr=arr.filter(x=>x.a.tipo===S.fTipo);
+  if(S.fEstado) arr=arr.filter(x=>x.estado===S.fEstado);
+  if(S.fClave) arr=arr.filter(x=>(x.a.claves||[]).some(k=>k.toLowerCase()===S.fClave.toLowerCase()));
+  if(S.fAutor) arr=arr.filter(x=>autorKey(x.a)===S.fAutor);
+  if(S.fMios) arr=arr.filter(x=>S.uid&&x.a.autorId===S.uid);
+  if(S.fVigencia) arr=arr.filter(x=>vencido(x.id));
+  if(q){
+    const ws=q.split(/\s+/);
+    arr=arr.filter(x=>{ const a=x.a;
+      const blob=[a.titulo,a.contexto,a.accion,a.resultado,a.recomendaciones,a.area,a.proceso,a.tipo,(a.claves||[]).join(" ")].join(" ").toLowerCase();
+      return ws.every(w=>blob.indexOf(w)>=0); });
+  }
+  const ord={recientes:(x,y)=>String(y.a.actualizadoEn||y.a.creadoEn||"").localeCompare(String(x.a.actualizadoEn||x.a.creadoEn||"")),
+    utiles:(x,y)=>mapCount(y.a.utiles)-mapCount(x.a.utiles),
+    reusos:(x,y)=>mapSum(y.a.reusos)-mapSum(x.a.reusos),
+    consultas:(x,y)=>mapSum(y.a.vistas)-mapSum(x.a.vistas),
+    titulo:(x,y)=>String(x.a.titulo||"").localeCompare(String(y.a.titulo||""))}[S.orden];
+  return arr.sort(ord);
+}
+function clavesFrecuentes(n){
+  const c={}; S.aportes.forEach(a=>(a.claves||[]).forEach(k=>{const K=k.trim(); if(K) c[K]=(c[K]||0)+1;}));
+  return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,n||10);
+}
+function relacionados(id,n){
+  const base=S.aportes.get(id); if(!base) return [];
+  const bk=(base.claves||[]).map(k=>k.toLowerCase()), bt=tokens(base.titulo+" "+base.contexto);
+  return listaAportes().filter(x=>x.id!==id).map(x=>{
+    let s=0;
+    (x.a.claves||[]).forEach(k=>{ if(bk.indexOf(k.toLowerCase())>=0) s+=3; });
+    if(x.a.proceso===base.proceso) s+=2;
+    if(x.a.area===base.area) s+=1;
+    const xt=tokens(x.a.titulo+" "+x.a.contexto); xt.forEach(w=>{ if(bt.indexOf(w)>=0) s+=0.4; });
+    if(x.estado==="aprobado") s+=0.6;
+    return {x,s};
+  }).filter(o=>o.s>=2).sort((a,b)=>b.s-a.s).slice(0,n||4).map(o=>o.x);
+}
+function posiblesDuplicados(){
+  const t=tokens((S.form.titulo||"")+" "+(S.form.contexto||"")), ks=(S.form.claves||[]).map(k=>k.toLowerCase());
+  if(t.length<2&&!ks.length) return [];
+  return listaAportes().filter(x=>x.id!==S.editId).map(x=>{
+    let s=0; const xt=tokens(x.a.titulo+" "+x.a.contexto);
+    xt.forEach(w=>{ if(t.indexOf(w)>=0) s+=1; });
+    (x.a.claves||[]).forEach(k=>{ if(ks.indexOf(k.toLowerCase())>=0) s+=2; });
+    if(S.form.proceso&&x.a.proceso===S.form.proceso) s+=1;
+    return {x,s};
+  }).filter(o=>o.s>=4).sort((a,b)=>b.s-a.s).slice(0,3).map(o=>o.x);
+}
+function chip(estado){ const e=ESTADOS[estado]; return '<span class="chip '+e.c+'"><span class="dot"></span>'+e.t+'</span>'; }
+function chipBtn(estado){ const e=ESTADOS[estado]; return '<button class="chip '+e.c+'" data-filtro="estado" data-valor="'+estado+'" title="Filtrar por estado"><span class="dot"></span>'+e.t+'</button>'; }
+
+/* ============ 1. banco ============ */
+function vistaBuscar(){
+  const arr=filtrados(), total=S.aportes.size;
+  const opts=(list,sel,todo)=>'<option value="">'+todo+'</option>'+list.map(x=>'<option value="'+esc(x)+'"'+(sel===x?" selected":"")+'>'+esc(x)+'</option>').join("");
+  const estOpts='<option value="">Todos los estados</option>'+Object.keys(ESTADOS).map(k=>'<option value="'+k+'"'+(S.fEstado===k?" selected":"")+'>'+ESTADOS[k].t+'</option>').join("");
+  const act=[];
+  if(S.q) act.push(["q","Texto: “"+S.q+"”"]);
+  if(S.fArea) act.push(["fArea",S.fArea]); if(S.fProceso) act.push(["fProceso",S.fProceso]);
+  if(S.fTipo) act.push(["fTipo",S.fTipo]); if(S.fEstado) act.push(["fEstado",ESTADOS[S.fEstado].t]);
+  if(S.fClave) act.push(["fClave","Palabra clave: "+S.fClave]);
+  if(S.fAutor) act.push(["fAutor","Autor: "+autorNombre(S.fAutor)]);
+  if(S.fMios) act.push(["fMios","Mis aportes"]); if(S.fVigencia) act.push(["fVigencia","Vigencia por confirmar"]);
+  const quick=[["todos","Todos",!S.fEstado&&!S.fMios&&!S.fVigencia],["aprobado","Aprobados",S.fEstado==="aprobado"],["pendiente","Pendientes",S.fEstado==="pendiente"],["ajustes","Requieren ajustes",S.fEstado==="ajustes"],["mios","Mis aportes",S.fMios],["vigencia","Vigencia por confirmar",S.fVigencia]];
+  const freq=clavesFrecuentes(8);
+  let cuerpo;
+  if(!S.ready&&!total&&!S.dbOff) cuerpo='<div class="empty"><h3>Cargando el banco de conocimiento…</h3><p>Se están recuperando los aportes registrados por la organización.</p></div>';
+  else if(!total) cuerpo='<div class="empty"><h3>El banco de conocimiento está vacío</h3><p>Aún no hay aportes registrados. El primero puede ser una solución que hoy solo conoce una persona del equipo: un procedimiento, una lección aprendida o la forma de resolver un caso recurrente.</p>'+(S.canWrite===false?"":'<button class="btn primary" data-ir="nuevo">Registrar el primer aporte</button>')+'</div>';
+  else if(!arr.length) cuerpo='<div class="empty"><h3>Ningún aporte coincide con la búsqueda</h3><p>Prueba con otra palabra clave o quita un filtro. También puedes registrar este conocimiento si todavía no existe.</p><div class="actrow" style="justify-content:center"><button class="btn" data-limpiar="1">Limpiar filtros</button>'+(S.canWrite===false?"":'<button class="btn primary" data-ir="nuevo">Registrar este conocimiento</button>')+'</div></div>';
+  else cuerpo='<div class="list">'+arr.map(fila).join("")+'</div>';
+  return avisos()
+    +'<div class="vhead"><div><h2>Banco de conocimiento</h2><p>Procedimientos, experiencias y lecciones aprendidas registradas por la organización. Prioriza los contenidos aprobados y revisa su fecha de actualización antes de aplicarlos.</p></div>'
+    +(S.canWrite===false?"":'<button class="btn primary" data-ir="nuevo">+ Compartir conocimiento</button>')+'</div>'
+    +'<div class="filters">'
+      +'<label class="search"><span class="sr">Buscar conocimiento</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4.3-4.3"></path></svg>'
+      +'<input id="q" type="text" placeholder="Buscar por palabra clave, proceso o problema…" value="'+esc(S.q)+'"></label>'
+      +'<label class="sr" for="fArea">Área</label><select id="fArea">'+opts(AREAS,S.fArea,"Todas las áreas")+'</select>'
+      +'<label class="sr" for="fProceso">Proceso</label><select id="fProceso">'+opts(PROCESOS,S.fProceso,"Todos los procesos")+'</select>'
+      +'<label class="sr" for="fEstado">Estado</label><select id="fEstado">'+estOpts+'</select>'
+      +'<label class="sr" for="orden">Orden</label><select id="orden">'
+        +['recientes|Más recientes','utiles|Más valorados','reusos|Más reutilizados','consultas|Más consultados','titulo|Título A–Z'].map(o=>{const p=o.split("|");return '<option value="'+p[0]+'"'+(S.orden===p[0]?" selected":"")+'>'+p[1]+'</option>';}).join("")
+      +'</select></div>'
+    +'<div class="quick">'+quick.map(k=>'<button class="qchip" data-quick="'+k[0]+'" aria-pressed="'+(k[2]?"true":"false")+'">'+esc(k[1])+'</button>').join("")
+      +'<span style="font-family:var(--font-m);font-size:.72rem;color:var(--ink-3);margin-left:auto">'+arr.length+' de '+total+' aportes</span></div>'
+    +(act.length?'<div class="active-filters"><span>Filtros activos:</span>'+act.map(f=>'<span class="fchip">'+esc(f[1])+'<button data-quitar="'+f[0]+'" aria-label="Quitar filtro">×</button></span>').join("")+'<button class="link" data-limpiar="1">Limpiar todo</button></div>':"")
+    +(total&&freq.length?'<div class="active-filters"><span>Temas frecuentes:</span>'+freq.map(f=>'<button class="tag" data-clave="'+esc(f[0])+'">'+esc(f[0])+' · '+f[1]+'</button>').join("")+'</div>':"")
+    +cuerpo;
+}
+function fila(x){
+  const a=x.a,cl=(a.claves||[]).slice(0,5);
+  return '<div class="item" data-abrir="'+esc(x.id)+'" tabindex="0" role="button">'
+    +'<div class="row1"><h3>'+esc(a.titulo||"Sin título")+'</h3>'+chipBtn(x.estado)+(vencido(x.id)?'<button class="chip adj" data-quick="vigencia">Vigencia por confirmar</button>':"")+(a.ejemplo?'<span class="chip ej">Ejemplo</span>':"")+'</div>'
+    +'<p class="snip">'+esc(a.contexto||"")+'</p>'
+    +(cl.length?'<div class="tags">'+cl.map(k=>'<button class="tag" data-clave="'+esc(k)+'">'+esc(k)+'</button>').join("")+'</div>':"")
+    +'<div class="row2">'
+      +'<button class="mini" data-filtro="area" data-valor="'+esc(a.area||"")+'">'+esc(a.area||"—")+'</button><span>·</span>'
+      +'<button class="mini" data-filtro="proceso" data-valor="'+esc(a.proceso||"")+'">'+esc(a.proceso||"—")+'</button>'
+      +'<button class="mini" data-filtro="tipo" data-valor="'+esc(a.tipo||"")+'">'+esc(a.tipo||"Aporte")+'</button>'
+      +'<button class="mini" data-filtro="autor" data-valor="'+esc(autorKey(a))+'">'+esc(nombre(a.autorId,a.autorEtiqueta))+'</button>'
+      +'<span>Actualizado '+fecha(a.actualizadoEn||a.creadoEn)+'</span>'
+      +'<span>'+mapSum(a.vistas)+' consultas</span><span>'+mapCount(a.utiles)+' útil</span><span>'+mapSum(a.reusos)+' reutilizaciones</span>'
+    +'</div></div>';
+}
+
+/* ============ 2. detalle ============ */
+function vistaDetalle(id){
+  const a=S.aportes.get(id);
+  if(!a) return '<div class="crumbs"><button data-ir="buscar">← Banco de conocimiento</button></div><div class="empty"><h3>Aporte no disponible</h3><p>El contenido fue eliminado o tu perfil no tiene acceso a él.</p></div>';
+  const est=estadoDe(id),rev=S.revisiones.get(id)||{};
+  const yoUtil=!!(a.utiles&&S.uid&&a.utiles[S.uid]);
+  const puedo=S.canWrite!==false&&!!S.uid&&!!S.db;
+  const rel=relacionados(id,4);
+  const bloque=(t,v)=>v?'<div class="dblock"><h4>'+t+'</h4><p>'+esc(v)+'</p></div>':"";
+  const cmts=S.comentarios.length?S.comentarios.map(c=>
+    '<div class="cmt '+(c.tipo==="reuso"?"reuso":(c.tipo==="actualizacion"?"actualizacion":""))+'"><span class="meta"><span>'+esc(nombre(c.autorId,c.autorEtiqueta))+'</span><span>'+fecha(c.creadoEn)+'</span>'+(c.tipo==="reuso"?'<span>Reutilización registrada</span>':"")+(c.tipo==="actualizacion"?'<span>Propuesta de actualización</span>':"")+'</span><p>'+esc(c.texto)+'</p></div>').join("")
+    :'<p class="muted" style="font-size:.85rem;margin:.5rem 0 0">Todavía no hay comentarios. Si aplicaste este conocimiento, cuéntale al equipo cómo te funcionó o qué ajustarías.</p>';
+  return '<div class="crumbs"><button data-ir="buscar">Banco de conocimiento</button><span>›</span>'
+    +'<button data-filtro="area" data-valor="'+esc(a.area||"")+'">'+esc(a.area||"—")+'</button><span>›</span>'
+    +'<button data-filtro="proceso" data-valor="'+esc(a.proceso||"")+'">'+esc(a.proceso||"—")+'</button></div>'
+  +avisos()
+  +(reeditado(id)?'<div class="banner info"><span><b>Editado después de la validación</b>El contenido cambió tras su última revisión, por lo que vuelve a la cola de validación. La versión que ves es la más reciente.</span></div>':"")
+  +(vencido(id)?'<div class="banner warn"><span><b>Vigencia por confirmar</b>La fecha de próxima revisión ya pasó ('+fecha(rev.proximaRevision)+'). Verifica con el responsable antes de aplicarlo.</span></div>':"")
+  +'<div class="detail"><div class="card pad">'
+    +'<div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:.55rem">'+chip(est)
+      +'<button class="chip plain" data-filtro="tipo" data-valor="'+esc(a.tipo||"")+'">'+esc(a.tipo||"Aporte")+'</button>'
+      +'<span class="chip plain">'+esc(a.acceso||ACCESOS[0])+'</span>'+(a.ejemplo?'<span class="chip ej">Ejemplo de demostración</span>':"")+'</div>'
+    +'<h2 style="font-size:1.5rem;letter-spacing:-.025em;margin-bottom:.35rem">'+esc(a.titulo||"Sin título")+'</h2>'
+    +'<p class="muted" style="font-size:.85rem;font-family:var(--font-m);margin:0 0 1.1rem">'+esc(a.area||"—")+' › '+esc(a.proceso||"—")+'</p>'
+    +bloque("Contexto o problema",a.contexto)+bloque("Acción realizada",a.accion)+bloque("Resultado obtenido",a.resultado)+bloque("Recomendaciones",a.recomendaciones)
+    +((a.claves||[]).length?'<div class="dblock"><h4>Palabras clave</h4><div class="tags">'+a.claves.map(k=>'<button class="tag" data-clave="'+esc(k)+'">'+esc(k)+'</button>').join("")+'</div></div>':"")
+    +(rev.nota?'<div class="dblock"><h4>Nota del validador</h4><p>'+esc(rev.nota)+'</p></div>':"")
+    +'<div class="dblock"><h4>Comentarios y reutilización</h4><div class="comments">'+cmts+'</div>'
+      +(puedo?'<div style="margin-top:.8rem;display:grid;gap:.5rem"><label class="sr" for="cmt">Comentario</label><textarea id="cmt" rows="2" placeholder="¿Lo aplicaste? Cuenta cómo te funcionó o qué debería actualizarse.">'+esc(S.cmtDraft)+'</textarea>'
+        +'<div class="actrow"><button class="btn small" data-cmt="comentario" data-id="'+esc(id)+'">Publicar comentario</button>'
+        +'<button class="btn small" data-cmt="actualizacion" data-id="'+esc(id)+'">Proponer actualización</button></div></div>'
+        :'<p class="muted" style="font-size:.82rem;margin:.6rem 0 0">Tu perfil actual no permite comentar.</p>')
+    +'</div></div><aside class="side">'
+    +'<div class="card pad"><p class="sectitle">Ficha del aporte</p><dl class="facts">'
+      +'<div><dt>Registrado por</dt><dd><button class="link" data-filtro="autor" data-valor="'+esc(autorKey(a))+'">'+esc(nombre(a.autorId,a.autorEtiqueta))+'</button></dd></div>'
+      +'<div><dt>Fecha de registro</dt><dd>'+fecha(a.creadoEn)+'</dd></div>'
+      +'<div><dt>Última actualización</dt><dd>'+fecha(a.actualizadoEn||a.creadoEn)+(a.ediciones?' · '+a.ediciones+' edición'+(a.ediciones===1?"":"es"):"")+'</dd></div>'
+      +'<div><dt>Validado por</dt><dd>'+((rev.revisorId||rev.revisorEtiqueta)?esc(nombre(rev.revisorId,rev.revisorEtiqueta))+' · '+fecha(rev.revisadoEn):"Sin validar")+'</dd></div>'
+      +'<div><dt>Próxima revisión</dt><dd>'+(rev.proximaRevision?fecha(rev.proximaRevision):"Por definir")+'</dd></div>'
+    +'</dl>'+(puedoEditar(id)?'<div class="actrow" style="margin-top:.8rem"><button class="btn small" data-editar="'+esc(id)+'">Editar aporte</button></div>':"")+'</div>'
+    +'<div class="card pad"><p class="sectitle">Uso de este contenido</p>'
+      +'<div class="metric"><span>Consultas</span><b>'+mapSum(a.vistas)+'</b></div>'
+      +'<div class="metric"><span>Marcado como útil</span><b>'+mapCount(a.utiles)+'</b></div>'
+      +'<div class="metric"><span>Reutilizaciones reportadas</span><b>'+mapSum(a.reusos)+'</b></div>'
+      +(puedo?'<div class="actrow" style="margin-top:.8rem"><button class="btn small'+(yoUtil?' on':'')+'" data-util="'+esc(id)+'">'+(yoUtil?'✓ Me fue útil':'Me fue útil')+'</button><button class="btn small" data-reuso="'+esc(id)+'">Registrar reutilización</button></div>':"")
+    +'</div>'
+    +(rel.length?'<div class="card pad"><p class="sectitle">Contenido relacionado</p><div class="rel">'+rel.map(x=>'<button data-abrir="'+esc(x.id)+'"><span class="t">'+esc(x.a.titulo||"Sin título")+'</span><span class="m">'+esc(x.a.area||"")+' · '+ESTADOS[x.estado].t+'</span></button>').join("")+'</div></div>':"")
+    +(S.canEdit?panelValidacion(id,est,rev):"")
+  +'</aside></div>';
+}
+function panelValidacion(id,est,rev){
+  const prox=rev.proximaRevision||(function(){const d=new Date();d.setMonth(d.getMonth()+6);return d.toISOString().slice(0,10);})();
+  return '<div class="card pad"><p class="sectitle">Panel del validador</p>'
+    +'<p class="muted" style="font-size:.82rem;margin:0 0 .7rem">Verifica que el contenido sea comprensible, pertinente, no confidencial y suficientemente sustentado antes de publicarlo como conocimiento validado.</p>'
+    +'<div class="field" style="margin-bottom:.6rem"><label for="vnota">Nota de revisión</label><textarea id="vnota" rows="2" placeholder="Qué se verificó o qué debe ajustarse.">'+esc(rev.nota||"")+'</textarea></div>'
+    +'<div class="field" style="margin-bottom:.8rem"><label for="vprox">Próxima revisión de vigencia</label><input id="vprox" type="date" value="'+esc(prox)+'"></div>'
+    +'<div class="actrow">'
+      +'<button class="btn small primary" data-val="aprobado" data-id="'+esc(id)+'"'+(est==="aprobado"?" disabled":"")+'>Aprobar</button>'
+      +'<button class="btn small" data-val="ajustes" data-id="'+esc(id)+'">Solicitar ajustes</button>'
+      +'<button class="btn small" data-val="archivado" data-id="'+esc(id)+'">Archivar</button>'
+      +(est!=="pendiente"?'<button class="btn small" data-val="pendiente" data-id="'+esc(id)+'">Devolver a pendiente</button>':"")
+    +'</div></div>';
+}
+
+/* ============ 3. registrar / editar ============ */
+function vistaNuevo(){
+  if(S.canWrite===false||!S.db) return avisos()+'<div class="vhead"><div><h2>Compartir conocimiento</h2></div></div><div class="empty"><h3>Registro no disponible</h3><p>Tu perfil puede consultar el banco de conocimiento, pero no registrar aportes.</p><button class="btn" data-ir="buscar">Ir al banco de conocimiento</button></div>';
+  const f=S.form, edit=!!S.editId;
+  const sel=(id,label,list,val,hint)=>'<div class="field"><label for="'+id+'">'+label+'</label><select id="'+id+'"><option value="">Seleccionar…</option>'+list.map(x=>'<option value="'+esc(x)+'"'+(val===x?" selected":"")+'>'+esc(x)+'</option>').join("")+'</select>'+(hint?'<span class="hint">'+hint+'</span>':"")+'</div>';
+  const pl=PLANTILLAS[f.tipo]||PLANTILLAS["Procedimiento"];
+  const ta=(id,label,val,rows)=>'<div class="field"><label for="'+id+'">'+label+'</label><textarea id="'+id+'" rows="'+(rows||3)+'" placeholder="'+esc(pl[id]||"")+'">'+esc(val||"")+'</textarea></div>';
+  const campos=[f.titulo&&f.titulo.length>=8,!!f.area,!!f.proceso,!!f.tipo,(f.claves||[]).length>0,f.contexto&&f.contexto.length>=20,f.accion&&f.accion.length>=20,!!f.resultado,!!f.recomendaciones,!!f.confi];
+  const hechos=campos.filter(Boolean).length, pct=Math.round(hechos/campos.length*100);
+  const dups=posiblesDuplicados();
+  const sugs=clavesFrecuentes(14).map(k=>k[0]).filter(k=>(f.claves||[]).map(x=>x.toLowerCase()).indexOf(k.toLowerCase())<0).slice(0,7);
+  return avisos()
+  +'<div class="vhead"><div><h2>'+(edit?"Editar aporte":"Compartir conocimiento")+'</h2><p>'+(edit?"Al guardar, el aporte vuelve a la cola de validación para que un responsable confirme los cambios.":"Un aporte útil describe la situación, lo que se hizo, el resultado y lo que recomendarías a quien enfrente el mismo caso. Al enviarlo queda pendiente de validación.")+'</p></div>'
+  +(edit?'<button class="btn" data-cancelar="1">Cancelar edición</button>':"")+'</div>'
+  +'<div class="banner info"><span><b>Antes de enviar</b>No incluyas datos personales, contraseñas, información identificable de clientes ni secretos empresariales. Adjunta solo lo autorizado por tu área.</span></div>'
+  +(dups.length?'<div class="banner warn"><span><b>Puede que ya exista</b>Encontramos contenido parecido. Revísalo antes de duplicar: quizá basta con comentarlo o proponer su actualización.<div class="inline-act" style="margin-top:.4rem">'+dups.map(d=>'<button class="btn small" data-abrir="'+esc(d.id)+'">'+esc((d.a.titulo||"").slice(0,54))+'</button>').join("")+'</div></span></div>':"")
+  +'<form class="ap card pad" id="formAp" novalidate>'
+    +'<div class="prog"><div class="track"><i style="width:'+pct+'%"></i></div><div class="cap"><span>Completitud del aporte</span><span>'+hechos+' de '+campos.length+' elementos · '+pct+'%</span></div></div>'
+    +'<div class="field"><label for="titulo">Título del aporte</label><input id="titulo" type="text" maxlength="120" placeholder="Ej.: Verificación y respuesta ante retraso en la entrega de un pedido" value="'+esc(f.titulo||"")+'"><span class="hint">Concreto y reconocible: quien busque el tema debe identificarlo sin conocer a su autor.</span></div>'
+    +'<div class="fgrid">'+sel("area","Área responsable",AREAS,f.area)+sel("proceso","Proceso relacionado",PROCESOS,f.proceso)+'</div>'
+    +'<div class="fgrid">'+sel("tipo","Tipo de conocimiento",TIPOS,f.tipo,"Define la plantilla de redacción sugerida en los campos de abajo.")+sel("acceso","Nivel de acceso",ACCESOS,f.acceso,"Etiqueta de clasificación; no restringe técnicamente la lectura en este prototipo.")+'</div>'
+    +'<div class="field"><label for="kw">Palabras clave</label><div class="kwbox" id="kwbox">'+(f.claves||[]).map((k,i)=>'<span class="kw">'+esc(k)+'<button type="button" data-delkw="'+i+'" aria-label="Quitar '+esc(k)+'">×</button></span>').join("")+'<input id="kw" type="text" placeholder="Escribe y presiona Enter"></div>'
+      +(sugs.length?'<div class="sugg"><span class="hint" style="margin-right:.2rem">Usadas en el banco:</span>'+sugs.map(k=>'<button type="button" data-addkw="'+esc(k)+'">+ '+esc(k)+'</button>').join("")+'</div>':"")
+      +'<span class="hint">Entre 2 y 6 términos con los que otra persona buscaría este caso.</span></div>'
+    +ta("contexto","Contexto o problema",f.contexto)
+    +ta("accion","Acción realizada",f.accion,5)
+    +ta("resultado","Resultado obtenido",f.resultado)
+    +ta("recomendaciones","Recomendaciones",f.recomendaciones)
+    +'<label class="check"><input type="checkbox" id="confi"'+(f.confi?" checked":"")+'><span>Revisé el contenido y <b>no incluye</b> datos personales, contraseñas, información identificable de clientes ni secretos empresariales.</span></label>'
+    +(S.formErr?'<p class="err">'+esc(S.formErr)+'</p>':"")
+    +'<div class="formact"><button class="btn primary" type="submit"'+(S.busy?" disabled":"")+'>'+(S.busy?"Guardando…":(edit?"Guardar cambios":"Enviar a revisión"))+'</button>'
+      +'<button class="btn" type="button" data-reset="1">'+(edit?"Restaurar original":"Limpiar formulario")+'</button>'
+      +'<span class="hint">Podrás seguir su estado en el banco: pendiente, aprobado o requiere ajustes.</span></div>'
+  +'</form>';
+}
+
+/* ============ 4. revisión ============ */
+function vistaRevision(){
+  const todos=listaAportes();
+  const cola=todos.filter(x=>x.estado==="pendiente").sort((x,y)=>String(x.a.creadoEn||"").localeCompare(String(y.a.creadoEn||"")));
+  const porVencer=todos.filter(x=>vencido(x.id));
+  const ajustes=todos.filter(x=>x.estado==="ajustes");
+  if(!S.canEdit){
+    return avisos()+'<div class="vhead"><div><h2>Revisión y validación</h2><p>Los aportes se publican como conocimiento validado después de que un responsable designado verifica su claridad, pertinencia y confidencialidad.</p></div></div>'
+    +'<div class="banner info"><span><b>Función reservada a validadores</b>Tu perfil no tiene asignada la revisión de aportes. Quien administra la plataforma puede otorgarte el nivel de editor desde el menú de uso compartido.</span></div>'
+    +'<div class="card pad"><p class="sectitle">Estado de la cola</p>'
+      +'<div class="metric"><span>Aportes pendientes de validación</span><b>'+cola.length+'</b></div>'
+      +'<div class="metric"><span>Devueltos para ajustes</span><b>'+ajustes.length+'</b></div>'
+      +'<div class="metric"><span>Aprobados con vigencia por confirmar</span><b>'+porVencer.length+'</b></div>'
+      +'<div class="actrow" style="margin-top:.8rem"><button class="btn small" data-quick="pendiente">Ver los pendientes</button></div></div>';
+  }
+  const filaRev=x=>'<div class="item" data-abrir="'+esc(x.id)+'" tabindex="0" role="button">'
+    +'<div class="row1"><h3>'+esc(x.a.titulo||"Sin título")+'</h3>'+chip(x.estado)+(reeditado(x.id)?'<span class="chip plain">Editado tras validar</span>':"")+'</div>'
+    +'<p class="snip">'+esc(x.a.contexto||"")+'</p>'
+    +'<div class="row2"><span>'+esc(x.a.area||"—")+'</span><span>'+esc(x.a.proceso||"—")+'</span><span>Registrado '+fecha(x.a.creadoEn)+'</span><span>'+esc(nombre(x.a.autorId,x.a.autorEtiqueta))+'</span></div>'
+    +'<div class="inline-act"><button class="btn small primary" data-val="aprobado" data-id="'+esc(x.id)+'" data-rapido="1">Aprobar</button>'
+      +'<button class="btn small" data-val="ajustes" data-id="'+esc(x.id)+'" data-rapido="1">Solicitar ajustes</button>'
+      +'<button class="btn small" data-abrir="'+esc(x.id)+'">Abrir ficha completa</button></div></div>';
+  return avisos()
+  +'<div class="vhead"><div><h2>Revisión y validación</h2><p>Verifica claridad, pertinencia, confidencialidad y sustento antes de publicar. Al aprobar desde la ficha completa puedes dejar nota de revisión y fecha de vigencia; desde aquí la aprobación es rápida, con vigencia a seis meses.</p></div></div>'
+  +'<div class="card pad" style="margin-bottom:1rem"><p class="sectitle">Criterios de validación</p><ul style="margin:0;padding-left:1.15rem;font-size:.87rem;color:var(--ink-2)">'
+    +'<li><b>Comprensible:</b> alguien que no participó en el caso puede seguirlo sin preguntar.</li>'
+    +'<li><b>Pertinente:</b> corresponde a un proceso real y vigente de la organización.</li>'
+    +'<li><b>Seguro:</b> no contiene datos personales, credenciales ni información de clientes.</li>'
+    +'<li><b>Sustentado:</b> describe qué se hizo y qué resultó, no solo una opinión.</li>'
+    +'<li><b>No duplicado:</b> si ya existe un contenido equivalente, se unifica en lugar de publicarse aparte.</li></ul></div>'
+  +'<h3 style="font-size:1.02rem;margin-bottom:.6rem">Cola de validación <span class="muted" style="font-family:var(--font-m);font-size:.78rem">('+cola.length+')</span></h3>'
+  +(cola.length?'<div class="list">'+cola.map(filaRev).join("")+'</div>':'<div class="empty"><h3>No hay aportes pendientes</h3><p>Toda la cola está revisada. Los nuevos registros aparecerán aquí automáticamente.</p></div>')
+  +(ajustes.length?'<h3 style="font-size:1.02rem;margin:1.6rem 0 .6rem">Devueltos para ajustes <span class="muted" style="font-family:var(--font-m);font-size:.78rem">('+ajustes.length+')</span></h3><div class="list">'+ajustes.map(filaRev).join("")+'</div>':"")
+  +(porVencer.length?'<h3 style="font-size:1.02rem;margin:1.6rem 0 .6rem">Vigencia por confirmar <span class="muted" style="font-family:var(--font-m);font-size:.78rem">('+porVencer.length+')</span></h3><div class="list">'+porVencer.map(filaRev).join("")+'</div>':"");
+}
+
+/* ============ 5. indicadores ============ */
+function metricas(){
+  const arr=listaAportes(), mes=hoy().slice(0,7);
+  const delMes=arr.filter(x=>String(x.a.creadoEn||"").slice(0,7)===mes).length;
+  const revisados=arr.filter(x=>x.estado!=="pendiente").length;
+  const aprobados=arr.filter(x=>x.estado==="aprobado").length;
+  const pct=revisados?Math.round(aprobados/revisados*100):null;
+  const consultas=arr.reduce((t,x)=>t+mapSum(x.a.vistas),0);
+  const reusos=arr.reduce((t,x)=>t+mapSum(x.a.reusos),0);
+  const part=new Set();
+  arr.forEach(x=>{ if(x.a.autorId)part.add(x.a.autorId); ["utiles","reusos","vistas","comentaristas"].forEach(k=>{const m=x.a[k]; if(m&&typeof m==="object")Object.keys(m).forEach(u=>part.add(u));}); });
+  const requieren=arr.filter(x=>x.estado==="aprobado"&&(!x.rev.proximaRevision||x.rev.proximaRevision<hoy())).length;
+  const vigentes=aprobados-requieren;
+  const pctAct=aprobados?Math.round(vigentes/aprobados*100):null;
+  const estadoCount={};Object.keys(ESTADOS).forEach(k=>estadoCount[k]=0);arr.forEach(x=>estadoCount[x.estado]++);
+  const areaCount={};arr.forEach(x=>{const k=x.a.area||"Sin área";areaCount[k]=(areaCount[k]||0)+1;});
+  const areas=Object.entries(areaCount).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const top=arr.slice().sort((x,y)=>(mapSum(y.a.reusos)*3+mapCount(y.a.utiles)*2+mapSum(y.a.vistas))-(mapSum(x.a.reusos)*3+mapCount(x.a.utiles)*2+mapSum(x.a.vistas))).slice(0,5);
+  const sinUso=arr.filter(x=>x.estado==="aprobado"&&mapSum(x.a.vistas)===0).length;
+  return {total:arr.length,delMes,revisados,aprobados,pct,consultas,reusos,part:part.size,requieren,vigentes,pctAct,estadoCount,areas,top,sinUso};
+}
+function vistaIndicadores(){
+  const m=metricas();
+  if(!m.total) return avisos()+'<div class="vhead"><div><h2>Indicadores</h2><p>Seguimiento del uso de la plataforma y de su contribución a los procesos.</p></div></div>'
+    +'<div class="empty"><h3>Sin datos todavía</h3><p>Los indicadores se calculan sobre los aportes registrados. Cuando existan registros aparecerán aquí: aportes del mes, porcentaje de aprobación, consultas, participación, reutilización y vigencia.</p>'+(S.canWrite===false?"":'<button class="btn primary" data-ir="nuevo">Registrar un aporte</button>')+'</div>';
+  const nd=v=>v==null?'<span style="font-size:1rem;color:var(--ink-3);font-family:var(--font-b);font-weight:500">Sin base</span>':v+'%';
+  const tile=(lbl,val,sub,freq,q)=>'<button class="tile" data-quick="'+q+'" title="Ver en el banco de conocimiento"><span class="lbl">'+lbl+'</span><span class="val">'+val+'</span><span class="sub">'+sub+'</span><span class="freq">'+freq+' →</span></button>';
+  const totEst=Object.values(m.estadoCount).reduce((a,b)=>a+b,0)||1;
+  const seg=Object.keys(ESTADOS).filter(k=>m.estadoCount[k]>0).map(k=>'<span style="flex:'+m.estadoCount[k]+';background:'+COLORES[k]+'" data-tip="'+ESTADOS[k].t+': '+m.estadoCount[k]+' ('+Math.round(m.estadoCount[k]/totEst*100)+'%)"></span>').join("");
+  const leg=Object.keys(ESTADOS).map(k=>'<button data-filtro="estado" data-valor="'+k+'"><span class="sw" style="background:'+COLORES[k]+'"></span><span>'+ESTADOS[k].t+'</span><span class="n">'+m.estadoCount[k]+'</span></button>').join("");
+  const max=Math.max.apply(null,m.areas.map(a=>a[1]).concat([1]));
+  const bars=m.areas.map(a=>'<button class="barrow" data-filtro="area" data-valor="'+esc(a[0])+'"><span class="nm">'+esc(a[0])+'</span><span class="bartrack"><i style="width:'+Math.max(2,a[1]/max*100)+'%" data-tip="'+esc(a[0])+': '+a[1]+' aporte'+(a[1]===1?"":"s")+' ('+Math.round(a[1]/m.total*100)+'% del total)"></i></span><span class="v">'+a[1]+'</span></button>').join("");
+  return avisos()
+  +'<div class="vhead"><div><h2>Indicadores</h2><p>Calculados en vivo sobre los aportes registrados en esta plataforma. Son indicadores de seguimiento: antes de fijar metas conviene establecer una línea base durante la prueba piloto. Cada tarjeta y cada barra abre el banco con el filtro correspondiente.</p></div></div>'
+  +'<div class="tiles">'
+    +tile("Aportes registrados",m.total,m.delMes+" en el mes en curso","Mensual","todos")
+    +tile("Porcentaje de aprobación",nd(m.pct),m.aprobados+" aprobados de "+m.revisados+" revisados","Mensual","aprobado")
+    +tile("Uso de contenidos",m.consultas,"Consultas a fichas de conocimiento","Mensual","consultas")
+    +tile("Participación",m.part,"Personas que registran, consultan o valoran","Mensual","todos")
+    +tile("Reutilización reportada",m.reusos,"Veces que alguien indicó haberlo aplicado","Trimestral","reusos")
+    +tile("Actualización",nd(m.pctAct),m.vigentes+" vigentes de "+m.aprobados+" aprobados","Trimestral","vigencia")
+  +'</div>'
+  +'<div class="charts">'
+    +'<div class="card pad"><p class="sectitle">Distribución por estado de validación</p><div class="segbar">'+seg+'</div><div class="seglegend">'+leg+'</div></div>'
+    +'<div class="card pad"><p class="sectitle">Aportes por área responsable</p><div class="bars">'+bars+'</div></div>'
+  +'</div>'
+  +'<div class="charts" style="margin-top:1rem">'
+    +'<div class="card pad"><p class="sectitle">Vigencia de los contenidos aprobados</p>'
+      +'<div class="meter"><div class="track"><i style="width:'+(m.aprobados?Math.round(m.vigentes/m.aprobados*100):0)+'%"></i></div>'
+      +'<div class="cap"><span>'+m.vigentes+' con revisión al día</span><button class="link" data-quick="vigencia">'+m.requieren+' requieren revisión →</button></div></div>'
+      +'<p class="muted" style="font-size:.82rem;margin-top:.8rem">'+m.sinUso+' contenido'+(m.sinUso===1?"":"s")+' aprobado'+(m.sinUso===1?"":"s")+' sin ninguna consulta todavía: conviene difundirlo'+(m.sinUso===1?"":"s")+' en el área responsable.</p></div>'
+    +'<div class="card pad"><p class="sectitle">Contenidos con mayor impacto</p>'
+      +((m.consultas+m.reusos)===0
+        ? '<p class="muted" style="font-size:.86rem;margin:0">Todavía no hay consultas ni reutilizaciones registradas. Este panel ordena los contenidos por uso real en cuanto el equipo empiece a abrirlos, valorarlos y aplicarlos.</p><div class="actrow" style="margin-top:.7rem"><button class="btn small" data-ir="buscar">Abrir el banco</button></div>'
+        : '<div class="rel">'+m.top.map(x=>'<button data-abrir="'+esc(x.id)+'"><span class="t">'+esc(x.a.titulo||"Sin título")+'</span><span class="m">'+mapSum(x.a.vistas)+' consultas · '+mapCount(x.a.utiles)+' útil · '+mapSum(x.a.reusos)+' reutilizaciones</span></button>').join("")+'</div><p class="muted" style="font-size:.8rem;margin-top:.6rem">Orden por reutilizaciones, valoraciones y consultas.</p>')
+      +'</div>'
+  +'</div>'
+  +'<div class="tablewrap"><table><caption>Vista de tabla de los seis indicadores definidos en la propuesta. Un valor «sin base» significa que todavía no hay denominador para calcularlo.</caption>'
+    +'<thead><tr><th scope="col">Indicador</th><th scope="col">Medición</th><th scope="col">Valor</th><th scope="col">Frecuencia</th></tr></thead><tbody>'
+    +'<tr><td>Aportes registrados</td><td>Conocimientos nuevos enviados</td><td class="num">'+m.total+'</td><td class="num">Mensual</td></tr>'
+    +'<tr><td>Porcentaje de aprobación</td><td>(Aprobados ÷ revisados) × 100</td><td class="num">'+(m.pct==null?"Sin base":m.pct+"%")+'</td><td class="num">Mensual</td></tr>'
+    +'<tr><td>Uso de contenidos</td><td>Consultas a los contenidos</td><td class="num">'+m.consultas+'</td><td class="num">Mensual</td></tr>'
+    +'<tr><td>Participación</td><td>Personas que registran, comentan o valoran</td><td class="num">'+m.part+'</td><td class="num">Mensual</td></tr>'
+    +'<tr><td>Reutilización reportada</td><td>Ocasiones en que se indicó haber aplicado un contenido</td><td class="num">'+m.reusos+'</td><td class="num">Trimestral</td></tr>'
+    +'<tr><td>Actualización</td><td>(Vigentes revisados ÷ aprobados) × 100</td><td class="num">'+(m.pctAct==null?"Sin base":m.pctAct+"%")+'</td><td class="num">Trimestral</td></tr>'
+    +'</tbody></table></div>';
+}
+
+/* ============ 6. guía ============ */
+function vistaGuia(){
+  const etapas=[["Identificación","El colaborador reconoce un conocimiento útil, una solución efectiva o una dificultad recurrente.","buscar"],
+   ["Registro","Completa el formulario con título, área, proceso, situación, solución, resultado y recomendaciones.","nuevo"],
+   ["Clasificación","El aporte se organiza con área, proceso, tipo y palabras clave; el validador puede ajustarlas.","nuevo"],
+   ["Revisión y validación","Un responsable verifica claridad, pertinencia, confidencialidad y sustento antes de publicarlo.","revision"],
+   ["Consulta y aplicación","Otros buscan el contenido, lo adaptan a su contexto y reportan si les fue útil.","buscar"],
+   ["Actualización","Se revisa la vigencia periódicamente para corregir o archivar lo que ya no aplica.","indicadores"]];
+  const seci=[["Socialización","Tácito → tácito","Fuera de la plataforma: mentorías, acompañamiento y trabajo conjunto. MEMORA los complementa, no los sustituye."],
+   ["Exteriorización","Tácito → explícito","El formulario de registro: convierte la experiencia de una persona en un contenido que otros pueden leer."],
+   ["Combinación","Explícito → explícito","Clasificación, palabras clave, contenido relacionado y búsqueda: relacionan aportes entre sí."],
+   ["Interiorización","Explícito → tácito","Consulta, aplicación y reutilización reportada: el contenido vuelve a ser práctica cotidiana."]];
+  return '<div class="vhead"><div><h2>Guía de uso</h2><p>Cómo funciona la plataforma, qué hace de un aporte un buen aporte y cuál es el alcance de este prototipo.</p></div></div>'
+  +'<h3 style="font-size:1rem;margin-bottom:.6rem">El ciclo de seis etapas</h3>'
+  +'<div class="flow">'+etapas.map((e,i)=>'<div><span class="n">Etapa 0'+(i+1)+'</span><h4>'+e[0]+'</h4><p>'+e[1]+'</p><button class="link" style="margin-top:.4rem;font-size:.81rem" data-ir="'+e[2]+'">Ir al módulo →</button></div>').join("")+'</div>'
+  +'<div class="guide" style="margin-top:1.2rem">'
+    +'<div class="card pad"><h3>Registrar un conocimiento</h3><ol><li>Abre <b>Compartir conocimiento</b>.</li><li>Escribe un título concreto que identifique el aprendizaje.</li><li>Elige área, proceso y tipo; el tipo define la plantilla de redacción.</li><li>Añade palabras clave: son las que otra persona escribirá al buscar.</li><li>Describe contexto, acción, resultado y recomendaciones.</li><li>Confirma la revisión de confidencialidad y envía a revisión.</li></ol><div class="actrow" style="margin-top:.7rem"><button class="btn small primary" data-ir="nuevo">Registrar ahora</button></div></div>'
+    +'<div class="card pad"><h3>Consultar y reutilizar</h3><ol><li>Busca por palabra clave o usa los filtros de área, proceso y estado.</li><li>Prioriza los contenidos aprobados y revisa su fecha de actualización.</li><li>Lee el procedimiento completo y verifica que aplique a tu caso.</li><li>Aplícalo según los protocolos internos de tu área.</li><li>Marca <b>Me fue útil</b> o <b>Registra la reutilización</b>, y comenta qué ajustarías.</li></ol><div class="actrow" style="margin-top:.7rem"><button class="btn small" data-ir="buscar">Ir al banco</button></div></div>'
+    +'<div class="card pad"><h3>Qué hace bueno a un aporte</h3><ul><li><b>Reproducible:</b> otra persona puede seguirlo sin preguntarte.</li><li><b>Situado:</b> dice en qué contexto aplica y en cuál no.</li><li><b>Verificable:</b> describe el resultado real, no la intención.</li><li><b>Buscable:</b> el título y las palabras clave usan los términos del día a día, no los del organigrama.</li><li><b>Honesto con sus límites:</b> señala qué falta por confirmar.</li></ul></div>'
+    +'<div class="card pad"><h3>Responsabilidades del validador</h3><ul><li>Revisar que los aportes sean claros, pertinentes y verificables.</li><li>Evitar la publicación de información confidencial o sin autorización.</li><li>Unificar duplicados y asignar categorías y responsables.</li><li>Definir la próxima fecha de revisión al aprobar un contenido.</li></ul><div class="actrow" style="margin-top:.7rem"><button class="btn small" data-ir="revision">Ver la cola de validación</button></div></div>'
+    +'<div class="card pad"><h3>Perfiles y permisos</h3><p>El rol se toma del nivel con que se comparte la plataforma: <b>Colaborador</b> registra, consulta, comenta, valora y edita sus propios aportes; <b>Validador</b> (editor o propietario) además aprueba, solicita ajustes y archiva; <b>Solo lectura</b> únicamente consulta. El estado de validación vive en una ruta que solo un validador puede escribir, de modo que la aprobación está protegida por reglas y no solo oculta en la interfaz.</p></div>'
+    +'<div class="card pad"><h3>Consulta asistida</h3><p>Describe tu situación en lenguaje normal y la plataforma responde con los contenidos <b>aprobados</b> que aplican, citando cada ficha. No inventa procedimientos: si el banco no tiene la respuesta, lo dice y te propone registrarla. Verifica siempre en la ficha antes de aplicar.</p><div class="actrow" style="margin-top:.7rem"><button class="btn small" data-ir="asistente">Hacer una consulta</button></div></div>'
+    +'<div class="card pad"><h3>Mapa de expertos</h3><p>Muestra quién ha documentado cada proceso y qué áreas siguen sin conocimiento documentado. Es el insumo de la etapa de identificación: antes de documentar, saber qué falta y a quién preguntarle.</p><div class="actrow" style="margin-top:.7rem"><button class="btn small" data-ir="expertos">Ver el mapa</button></div></div>'
+    +'<div class="card pad"><h3>Confidencialidad</h3><p>No registres datos personales, contraseñas, información identificable de clientes ni secretos empresariales. Los aportes son visibles para todas las personas con quienes se comparta esta plataforma, incluidos los contenidos pendientes de validación.</p></div>'
+  +'</div>'
+  +'<h3 style="font-size:1rem;margin:1.6rem 0 .6rem">Dónde encaja MEMORA en el modelo SECI</h3>'
+  +'<div class="tablewrap"><table><caption>Nonaka y Takeuchi (1995) describen la creación de conocimiento como la conversión continua entre lo tácito y lo explícito. La plataforma apoya tres de los cuatro modos; el cuarto sigue dependiendo de las personas.</caption>'
+    +'<thead><tr><th scope="col">Modo</th><th scope="col">Conversión</th><th scope="col">Cómo lo apoya MEMORA</th></tr></thead><tbody>'
+    +seci.map(r=>'<tr><td>'+r[0]+'</td><td class="num">'+r[1]+'</td><td>'+r[2]+'</td></tr>').join("")+'</tbody></table></div>'
+  +'<div class="card pad" style="margin-top:1rem"><h3 style="font-size:.98rem">Alcance de este prototipo</h3><p class="muted" style="font-size:.88rem">Es una implementación funcional para la prueba piloto: registro, clasificación, validación, búsqueda, reutilización e indicadores operan sobre datos reales y compartidos. Queda por fuera: adjuntos de archivos, historial de versiones del contenido, restricción técnica por área (el nivel de acceso es una etiqueta), integración con el directorio institucional y notificaciones. Los indicadores se calculan sobre los datos de esta plataforma, sin metas preestablecidas.</p></div>';
+}
+
+
+/* ============ consulta asistida ============ */
+const EJEMPLOS=["Me llegó un correo pidiendo cambiar la cuenta bancaria de un proveedor, ¿qué hago?",
+ "Un cliente reclama porque su pedido no ha llegado y no sé qué responderle.",
+ "Entra alguien nuevo a bodega la próxima semana, ¿cómo lo organizo?",
+ "El contrato con un proveedor vence en dos meses, ¿cuándo empiezo a negociar?"];
+function corpusAprobado(){
+  return listaAportes().filter(x=>x.estado==="aprobado").slice(0,40).map(x=>({
+    id:x.id,titulo:x.a.titulo,area:x.a.area,proceso:x.a.proceso,tipo:x.a.tipo,
+    claves:(x.a.claves||[]).join(", "),
+    contexto:String(x.a.contexto||"").slice(0,700),
+    accion:String(x.a.accion||"").slice(0,900),
+    recomendaciones:String(x.a.recomendaciones||"").slice(0,400)
+  }));
+}
+function vistaAsistente(){
+  const corpus=corpusAprobado();
+  const cab='<div class="vhead"><div><h2>Consulta asistida</h2><p>Describe tu situación en palabras normales. La respuesta se construye únicamente con los contenidos <b>aprobados</b> del banco y siempre indica de cuál ficha salió, para que puedas verificarla.</p></div></div>';
+  if(S.sample===null&&S.ready) return cab+'<div class="banner info"><span><b>No disponible en esta versión</b>'
+    +(window.MEMORA_SEMILLA
+      ? 'La consulta asistida usa un modelo de IA que solo corre dentro de Claude. En esta versión publicada como sitio web no está disponible; el buscador por palabra clave del banco funciona igual.'
+      : 'La consulta asistida necesita permiso del visor para preguntarle a Claude. Puedes seguir usando el buscador por palabra clave del banco de conocimiento.')
+    +'</span></div><div class="actrow"><button class="btn primary" data-ir="buscar">Ir al banco de conocimiento</button></div>';
+  if(!corpus.length) return cab+'<div class="empty"><h3>Todavía no hay contenido aprobado</h3><p>La consulta asistida solo responde con conocimiento validado. En cuanto el primer aporte sea aprobado, esta vista podrá usarlo.</p><button class="btn" data-ir="revision">Ver la cola de validación</button></div>';
+  const r=S.respuesta;
+  return cab
+  +'<div class="card pad ask">'
+    +'<div class="field"><label for="preg">Tu consulta</label><textarea id="preg" rows="3" placeholder="Ej.: un cliente reclama por un retraso y no sé qué puedo prometerle.">'+esc(S.pregunta)+'</textarea></div>'
+    +'<div class="exq">'+EJEMPLOS.map((e,i)=>'<button data-ejemplo="'+i+'">'+esc(e)+'</button>').join("")+'</div>'
+    +'<div class="actrow"><button class="btn primary" data-preguntar="1"'+(S.sampleBusy?" disabled":"")+'>'+(S.sampleBusy?"Consultando…":"Consultar el banco")+'</button>'
+      +(S.respuesta||S.sampleErr?'<button class="btn" data-limpiarask="1">Nueva consulta</button>':"")
+      +'<span class="hint">Se consultan '+corpus.length+' contenido'+(corpus.length===1?"":"s")+' aprobado'+(corpus.length===1?"":"s")+'.</span></div>'
+    +(S.sampleBusy?'<div class="thinking"><span class="dotpulse"></span>Buscando entre los contenidos aprobados…</div>':"")
+    +(S.sampleErr?'<p class="err">'+esc(S.sampleErr)+'</p>':"")
+  +'</div>'
+  +(r?'<div class="card pad" style="margin-top:1rem">'
+      +'<p class="sectitle">Respuesta</p><div class="answer"><p>'+esc(r.respuesta||"")+'</p></div>'
+      +(r.fuentes&&r.fuentes.length?'<p class="sectitle" style="margin-top:1rem">Fichas en las que se basa</p><div class="fuentes">'
+        +r.fuentes.map(f=>{const a=S.aportes.get(f.id)||{};return '<button class="fuente" data-abrir="'+esc(f.id)+'"><span class="t">'+esc(a.titulo||"Ficha")+'</span><span class="p">'+esc(f.porque||"")+'</span><span class="m">'+esc(a.area||"")+' · '+esc(a.proceso||"")+' · abrir ficha completa →</span></button>';}).join("")
+        +'</div>':"")
+      +(r.suficiente===false?'<div class="banner warn" style="margin:1rem 0 0"><span><b>Conocimiento no documentado</b>'+esc(r.sugerencia||"El banco no tiene un contenido aprobado que resuelva esta consulta.")+(S.canWrite===false?"":' <button class="link" data-ir="nuevo">Registrarlo ahora →</button>')+'</span></div>':"")
+      +'<p class="ia-nota">Respuesta generada por IA a partir de las fichas aprobadas; puede resumir u omitir detalles. Antes de aplicarla, abre la ficha y verifica su fecha de actualización.</p>'
+    +'</div>':"");
+}
+async function preguntar(){
+  const t=$("preg"); const q=(t?t.value:S.pregunta).trim();
+  S.pregunta=q; S.sampleErr=""; S.respuesta=null;
+  if(q.length<8){ S.sampleErr="Escribe tu consulta con un poco más de detalle."; render(); return; }
+  if(!S.sample){ S.sampleErr="La consulta asistida no está disponible en esta vista."; render(); return; }
+  S.sampleBusy=true; render();
+  const corpus=corpusAprobado();
+  const instr="Eres el asistente de consulta de MEMORA, la plataforma de gestión del conocimiento de una organización. "
+   +"Respondes ÚNICAMENTE con lo que digan las fichas aprobadas que se te entregan: no inventes procedimientos, cifras, nombres ni políticas, y no uses conocimiento general. "
+   +"Si ninguna ficha resuelve la consulta, dilo con claridad y marca suficiente=false.\n\n"
+   +"FICHAS APROBADAS (JSON):\n"+JSON.stringify(corpus)
+   +"\n\nCONSULTA DEL COLABORADOR:\n"+q
+   +"\n\nResponde en español, en tono profesional y directo, tuteando. Devuelve SOLO un objeto JSON con esta forma:\n"
+   +'{"respuesta":"máximo 120 palabras: qué debe hacer la persona según las fichas, en pasos si aplica","fuentes":[{"id":"id exacto de una ficha entregada","porque":"una frase: qué aporta esa ficha a esta consulta"}],"suficiente":true,"sugerencia":"si suficiente es false, qué conocimiento convendría documentar"}'
+   +"\nNo incluyas en fuentes ningún id que no esté en las fichas entregadas. Máximo 3 fuentes, la más pertinente primero.";
+  try{
+    const out=await S.sample.json(instr,{modelTier:"default"});
+    const val=S.aportes;
+    const fuentes=(out&&Array.isArray(out.fuentes)?out.fuentes:[]).filter(f=>f&&val.has(f.id)).slice(0,3);
+    S.respuesta={respuesta:String(out&&out.respuesta||"").slice(0,1600),fuentes:fuentes,
+      suficiente:!(out&&out.suficiente===false)&&fuentes.length>0,sugerencia:String(out&&out.sugerencia||"")};
+    S.sampleBusy=false; render();
+  }catch(err){
+    S.sampleBusy=false;
+    const c=err&&err.code;
+    S.sampleErr=c==="not_granted"?"No diste permiso para la consulta asistida. Puedes seguir usando el buscador por palabra clave."
+      :c==="rate_limited"?"Demasiadas consultas seguidas. Espera un momento y vuelve a intentarlo."
+      :"No se pudo completar la consulta. Intenta de nuevo o usa el buscador por palabra clave.";
+    render();
+  }
+}
+
+/* ============ mapa de expertos ============ */
+function expertos(){
+  const m={};
+  listaAportes().forEach(x=>{
+    const k=autorKey(x.a); if(!k) return;
+    if(!m[k]) m[k]={k:k,persona:!!x.a.autorId,etiqueta:x.a.autorEtiqueta||"",aportes:0,aprobados:0,consultas:0,utiles:0,reusos:0,areas:{},procesos:{}};
+    const e=m[k];
+    e.aportes++; if(x.estado==="aprobado") e.aprobados++;
+    e.consultas+=mapSum(x.a.vistas); e.utiles+=mapCount(x.a.utiles); e.reusos+=mapSum(x.a.reusos);
+    if(x.a.area) e.areas[x.a.area]=(e.areas[x.a.area]||0)+1;
+    if(x.a.proceso) e.procesos[x.a.proceso]=(e.procesos[x.a.proceso]||0)+1;
+  });
+  return Object.values(m).map(e=>{
+    e.score=e.aprobados*3+e.reusos*2+e.utiles+e.consultas*0.2+e.aportes*0.5;
+    e.areaTop=Object.entries(e.areas).sort((a,b)=>b[1]-a[1]).map(a=>a[0]);
+    e.procTop=Object.entries(e.procesos).sort((a,b)=>b[1]-a[1]).map(a=>a[0]);
+    return e;
+  }).sort((a,b)=>b.score-a.score);
+}
+function vistaExpertos(){
+  const ex=expertos();
+  const cab='<div class="vhead"><div><h2>Mapa de expertos</h2><p>Quién ha documentado qué, calculado con la autoría de los aportes, su aprobación y el uso que les han dado otras personas. Sirve para la primera etapa de la gestión del conocimiento: reconocer conocimientos críticos y saber a quién acudir.</p></div></div>';
+  if(!ex.length) return cab+'<div class="empty"><h3>Sin autoría registrada todavía</h3><p>El mapa se construye con los aportes del banco. Cuando el equipo empiece a registrar conocimiento aparecerá aquí quién domina cada proceso.</p>'+(S.canWrite===false?"":'<button class="btn primary" data-ir="nuevo">Registrar un aporte</button>')+'</div>';
+  const cards=ex.map(e=>'<div class="xcard">'
+    +'<div class="nm">'+esc(autorNombre(e.k))+(e.persona?'':'<span class="chip plain">Equipo o área</span>')+'</div>'
+    +'<div class="tags">'+e.areaTop.slice(0,2).map(a=>'<button class="tag" data-filtro="area" data-valor="'+esc(a)+'">'+esc(a)+'</button>').join("")+'</div>'
+    +'<div class="xstats">'
+      +'<div><span>Aportes</span><b>'+e.aportes+'</b></div>'
+      +'<div><span>Aprobados</span><b>'+e.aprobados+'</b></div>'
+      +'<div><span>Consultas</span><b>'+e.consultas+'</b></div>'
+      +'<div><span>Reutilizados</span><b>'+e.reusos+'</b></div>'
+    +'</div>'
+    +'<p class="muted" style="font-size:.82rem;margin:0">Procesos que ha documentado: '+esc(e.procTop.slice(0,3).join(", ")||"—")+'</p>'
+    +'<div class="actrow"><button class="btn small" data-filtro="autor" data-valor="'+esc(e.k)+'">Ver sus aportes</button></div>'
+  +'</div>').join("");
+  const porArea=AREAS.map(a=>{
+    const n=listaAportes().filter(x=>x.a.area===a).length;
+    const quien=ex.filter(e=>e.areas[a]).slice(0,1).map(e=>autorNombre(e.k))[0]||"";
+    return {a:a,n:n,quien:quien};
+  }).sort((x,y)=>y.n-x.n);
+  const sinDoc=PROCESOS.filter(pr=>pr!=="Otro"&&!listaAportes().some(x=>x.a.proceso===pr));
+  return cab
+  +'<h3 style="font-size:1rem;margin-bottom:.6rem">Quién documenta el conocimiento</h3>'
+  +'<div class="experts">'+cards+'</div>'
+  +'<div class="charts" style="margin-top:1.2rem">'
+    +'<div class="card pad"><p class="sectitle">Cobertura por área</p>'
+      +'<div class="cover">'+porArea.map(r=>'<button class="coverrow" data-filtro="area" data-valor="'+esc(r.a)+'"><span class="nm">'+esc(r.a)+'</span><span class="st '+(r.n?"si":"no")+'">'+(r.n?esc(r.quien||"documentada"):"sin documentar")+'</span><b>'+r.n+'</b></button>').join("")+'</div>'
+      +'<p class="muted" style="font-size:.8rem;margin-top:.7rem">Un área sin aportes no significa que no tenga conocimiento, sino que ese conocimiento sigue solo en las personas.</p></div>'
+    +'<div class="card pad"><p class="sectitle">Procesos sin conocimiento documentado</p>'
+      +(sinDoc.length?'<p class="muted" style="font-size:.86rem;margin:0">'+sinDoc.length+' de '+(PROCESOS.length-1)+' procesos del catálogo no tienen ningún aporte. Son los candidatos naturales para la siguiente campaña de documentación: toca el proceso para registrar un aporte con él ya seleccionado.</p>'
+        +'<div class="gaps">'+sinDoc.map(pr=>'<button data-nuevoproc="'+esc(pr)+'">+ '+esc(pr)+'</button>').join("")+'</div>'
+        :'<p class="muted" style="font-size:.86rem;margin:0">Todos los procesos del catálogo tienen al menos un aporte registrado. El siguiente paso es la profundidad: revisar que cada proceso tenga su conocimiento crítico y no solo un contenido suelto.</p>')
+    +'</div>'
+  +'</div>';
+}
+
+/* ============ eventos ============ */
+function conectar(r){
+  const root=document.body;
+  root.onclick=ev=>{
+    const t=ev.target.closest("[data-ir],[data-abrir],[data-quick],[data-filtro],[data-clave],[data-limpiar],[data-quitar],[data-editar],[data-cancelar],[data-reset],[data-delkw],[data-addkw],[data-cmt],[data-util],[data-reuso],[data-val],[data-preguntar],[data-ejemplo],[data-limpiarask],[data-nuevoproc]");
+    if(!t) return;
+    const d=t.dataset;
+    if(d.abrir!==undefined){ ev.stopPropagation(); ir("aporte-"+d.abrir); return; }
+    if(d.ir!==undefined){ if(d.ir==="nuevo"&&S.editId===null){} ir(d.ir); return; }
+    if(d.filtro!==undefined){ ev.stopPropagation(); aplicarFiltro(d.filtro,d.valor); return; }
+    if(d.clave!==undefined){ ev.stopPropagation(); limpiarFiltros(); S.fClave=d.clave; ir("buscar"); return; }
+    if(d.quick!==undefined){ ev.stopPropagation(); aplicarQuick(d.quick); return; }
+    if(d.limpiar!==undefined){ limpiarFiltros(); render(); return; }
+    if(d.quitar!==undefined){ quitarFiltro(d.quitar); return; }
+    if(d.editar!==undefined){ abrirEdicion(d.editar); return; }
+    if(d.cancelar!==undefined){ const id=S.editId; S.editId=null; S.form={claves:[]}; S.formErr=""; ir(id?"aporte-"+id:"buscar"); return; }
+    if(d.reset!==undefined){ if(S.editId) abrirEdicion(S.editId,true); else { S.form={claves:[]}; S.formErr=""; render(); } return; }
+    if(d.delkw!==undefined){ leerForm(); S.form.claves.splice(+d.delkw,1); render(); return; }
+    if(d.addkw!==undefined){ leerForm(); if(S.form.claves.indexOf(d.addkw)<0&&S.form.claves.length<8) S.form.claves.push(d.addkw); render(); return; }
+    if(d.cmt!==undefined){ publicarCmt(d.id,d.cmt); return; }
+    if(d.util!==undefined){ toggleUtil(d.util); return; }
+    if(d.reuso!==undefined){ registrarReuso(d.reuso); return; }
+    if(d.val!==undefined){ validar(d.id,d.val,d.rapido==="1"); return; }
+    if(d.preguntar!==undefined){ preguntar(); return; }
+    if(d.ejemplo!==undefined){ S.pregunta=EJEMPLOS[+d.ejemplo]||""; S.respuesta=null; S.sampleErr=""; render(); const e=$("preg"); if(e){ e.focus(); e.setSelectionRange(e.value.length,e.value.length); } return; }
+    if(d.limpiarask!==undefined){ S.pregunta=""; S.respuesta=null; S.sampleErr=""; render(); const e=$("preg"); if(e) e.focus(); return; }
+    if(d.nuevoproc!==undefined){ S.editId=null; S.formErr=""; S.form={claves:[],proceso:d.nuevoproc}; ir("nuevo"); return; }
+  };
+  document.querySelectorAll(".item[data-abrir]").forEach(el=>{ el.onkeydown=e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); ir("aporte-"+el.dataset.abrir); } }; });
+  const q=$("q");
+  if(q) q.oninput=()=>{ const p=q.selectionStart; S.q=q.value; render(); const n=$("q"); if(n){ n.focus(); try{n.setSelectionRange(p,p);}catch(e){} } };
+  const bind=(id,key)=>{ const e=$(id); if(e) e.onchange=()=>{ S[key]=e.value; render(); }; };
+  bind("fArea","fArea"); bind("fProceso","fProceso"); bind("fEstado","fEstado"); bind("orden","orden");
+  if(r.v==="asistente"){ const e=$("preg"); if(e){ e.oninput=()=>{ S.pregunta=e.value; }; e.onkeydown=ev2=>{ if(ev2.key==="Enter"&&(ev2.metaKey||ev2.ctrlKey)){ ev2.preventDefault(); preguntar(); } }; } }
+  if(r.v==="nuevo") conectarForm();
+  if(r.v==="detalle") conectarDetalle(r.id);
+  document.querySelectorAll("[data-tip]").forEach(el=>{
+    el.onmouseenter=ev=>mostrarTip(el.dataset.tip,ev); el.onmousemove=ev=>mostrarTip(el.dataset.tip,ev); el.onmouseleave=ocultarTip;
+  });
+}
+function aplicarFiltro(campo,valor){
+  limpiarFiltros();
+  if(campo==="area") S.fArea=valor; else if(campo==="proceso") S.fProceso=valor;
+  else if(campo==="tipo") S.fTipo=valor; else if(campo==="estado") S.fEstado=valor;
+  else if(campo==="autor") S.fAutor=valor;
+  ir("buscar");
+}
+function aplicarQuick(k){
+  if(k==="todos"){ limpiarFiltros(); }
+  else if(k==="mios"){ const v=!S.fMios; limpiarFiltros(); S.fMios=v; }
+  else if(k==="vigencia"){ const v=!S.fVigencia; limpiarFiltros(); S.fVigencia=v; }
+  else if(k==="consultas"||k==="reusos"){ limpiarFiltros(); S.orden=k; }
+  else { const v=S.fEstado===k?"":k; limpiarFiltros(); S.fEstado=v; }
+  ir("buscar");
+}
+function quitarFiltro(k){
+  if(k==="q") S.q=""; else if(k==="fMios") S.fMios=false; else if(k==="fVigencia") S.fVigencia=false; else S[k]="";
+  render();
+}
+function mostrarTip(t,ev){ const tip=$("tip"); tip.textContent=t; tip.style.opacity="1"; tip.style.left=Math.min(ev.clientX+12,window.innerWidth-190)+"px"; tip.style.top=Math.max(8,ev.clientY-34)+"px"; }
+function ocultarTip(){ $("tip").style.opacity="0"; }
+
+/* ---------- formulario ---------- */
+function leerForm(){
+  const g=id=>{const e=$(id);return e?e.value.trim():(S.form[id]||"");};
+  S.form.titulo=g("titulo");S.form.area=g("area");S.form.proceso=g("proceso");S.form.tipo=g("tipo");S.form.acceso=g("acceso");
+  S.form.contexto=g("contexto");S.form.accion=g("accion");S.form.resultado=g("resultado");S.form.recomendaciones=g("recomendaciones");
+  const c=$("confi"); if(c) S.form.confi=c.checked;
+}
+function conectarForm(){
+  const kw=$("kw");
+  if(kw) kw.onkeydown=e=>{
+    if(e.key==="Enter"||e.key===","){ e.preventDefault(); const v=kw.value.trim().replace(/,$/,"");
+      if(v&&(S.form.claves||[]).map(x=>x.toLowerCase()).indexOf(v.toLowerCase())<0&&S.form.claves.length<8){ leerForm(); S.form.claves.push(v); render(); const n=$("kw"); if(n)n.focus(); } }
+    else if(e.key==="Backspace"&&!kw.value&&S.form.claves.length){ leerForm(); S.form.claves.pop(); render(); const n=$("kw"); if(n)n.focus(); }
+  };
+  ["tipo","area","proceso"].forEach(id=>{ const e=$(id); if(e) e.onchange=()=>{ leerForm(); render(); }; });
+  ["titulo","contexto","accion"].forEach(id=>{ const e=$(id); if(e){ let t=null; e.oninput=()=>{ clearTimeout(t); t=setTimeout(()=>{ const p=e.selectionStart; leerForm(); render(); const n=$(id); if(n){ n.focus(); try{n.setSelectionRange(p,p);}catch(err){} } },700); }; } });
+  const c=$("confi"); if(c) c.onchange=()=>{ leerForm(); render(); };
+  const f=$("formAp"); if(f) f.onsubmit=e=>{ e.preventDefault(); guardar(); };
+}
+function abrirEdicion(id,silencioso){
+  const a=S.aportes.get(id); if(!a) return;
+  S.editId=id; S.formErr="";
+  S.form={titulo:a.titulo||"",area:a.area||"",proceso:a.proceso||"",tipo:a.tipo||"",acceso:a.acceso||ACCESOS[0],
+    claves:(a.claves||[]).slice(),contexto:a.contexto||"",accion:a.accion||"",resultado:a.resultado||"",recomendaciones:a.recomendaciones||"",confi:false};
+  if(silencioso) render(); else ir("nuevo");
+}
+async function guardar(){
+  leerForm();
+  const f=S.form, falta=[];
+  if(!f.titulo||f.titulo.length<8) falta.push("un título de al menos 8 caracteres");
+  if(!f.area) falta.push("el área responsable");
+  if(!f.proceso) falta.push("el proceso relacionado");
+  if(!f.tipo) falta.push("el tipo de conocimiento");
+  if(!f.contexto||f.contexto.length<20) falta.push("el contexto o problema (mínimo 20 caracteres)");
+  if(!f.accion||f.accion.length<20) falta.push("la acción realizada (mínimo 20 caracteres)");
+  if(!(f.claves||[]).length) falta.push("al menos una palabra clave");
+  if(!f.confi) falta.push("la confirmación de revisión de confidencialidad");
+  if(falta.length){ S.formErr="Falta "+falta.join("; ")+"."; render(); const e=$("formAp"); if(e) e.scrollIntoView({block:"nearest"}); return; }
+  if(!S.db){ S.formErr="No hay conexión con el almacén de datos. Intenta de nuevo en unos segundos."; render(); return; }
+  S.busy="1"; S.formErr=""; render();
+  const ahora=new Date().toISOString();
+  const base={titulo:f.titulo,area:f.area,proceso:f.proceso,tipo:f.tipo,acceso:f.acceso||ACCESOS[0],claves:f.claves,
+    contexto:f.contexto,accion:f.accion,resultado:f.resultado||"",recomendaciones:f.recomendaciones||"",actualizadoEn:ahora};
+  try{
+    if(S.editId){
+      const prev=S.aportes.get(S.editId)||{};
+      await S.db.doc("aportes/"+S.editId).set(Object.assign({},prev,base,{ediciones:(prev.ediciones||0)+1}));
+      const id=S.editId; S.editId=null; S.busy=""; S.form={claves:[]};
+      S.aviso="Cambios guardados. El aporte vuelve a la cola de validación."; ir("aporte-"+id);
+    }else{
+      const id="a-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7);
+      await S.db.collection("aportes").doc(id).set(Object.assign({},base,{autorId:S.uid||null,creadoEn:ahora,ediciones:0,vistas:{},utiles:{},reusos:{},comentaristas:{}}));
+      S.busy=""; S.form={claves:[]};
+      S.aviso="Aporte enviado a revisión. Un validador confirmará su publicación."; ir("aporte-"+id);
+    }
+  }catch(err){
+    S.busy="";
+    S.formErr=(err&&err.code==="invalid_argument")?"Tu perfil no tiene permiso para guardar en esta plataforma.":"No se pudo guardar. Revisa tu conexión e intenta de nuevo.";
+    render();
+  }
+}
+
+/* ---------- detalle: interacción ---------- */
+function conectarDetalle(id){
+  if(S.cmtId!==id){
+    if(S.unsubCmt){ S.unsubCmt(); S.unsubCmt=null; }
+    S.comentarios=[]; S.cmtId=id;
+    if(S.db){
+      try{ S.unsubCmt=S.db.collection("aportes/"+id+"/comentarios").orderBy("creadoEn","asc").limit(200).onSnapshot(snap=>{
+        S.comentarios=snap.docs.map(d=>d.data()||{}); resolverPerfiles(); render(); },()=>{}); }catch(e){}
+    }
+    registrarVista(id);
+  }
+  const t=$("cmt"); if(t) t.oninput=()=>{ S.cmtDraft=t.value; };
+}
+async function registrarVista(id){
+  if(!S.db||!S.uid||S.canWrite===false||S.vistasHechas.has(id)||!S.aportes.has(id)) return;
+  S.vistasHechas.add(id);
+  const a=S.aportes.get(id)||{};
+  const n=(a.vistas&&typeof a.vistas[S.uid]==="number"?a.vistas[S.uid]:0)+1;
+  try{ await S.db.doc("aportes/"+id).update({vistas:{[S.uid]:n}}); }catch(e){}
+}
+async function toggleUtil(id){
+  if(!S.db||!S.uid) return;
+  const a=S.aportes.get(id)||{}, yo=!!(a.utiles&&a.utiles[S.uid]);
+  try{
+    const utiles=Object.assign({},a.utiles||{});
+    if(yo) delete utiles[S.uid]; else utiles[S.uid]=true;
+    await S.db.doc("aportes/"+id).set(Object.assign({},a,{utiles:utiles}));
+  }catch(e){}
+}
+async function registrarReuso(id){
+  if(!S.db||!S.uid) return;
+  const a=S.aportes.get(id)||{};
+  const n=(a.reusos&&typeof a.reusos[S.uid]==="number"?a.reusos[S.uid]:0)+1;
+  const texto=(S.cmtDraft||"").trim()||"Apliqué este conocimiento en mi proceso.";
+  try{
+    await S.db.doc("aportes/"+id).update({reusos:{[S.uid]:n},comentaristas:{[S.uid]:true}});
+    await S.db.collection("aportes/"+id+"/comentarios").add({tipo:"reuso",texto:texto,autorId:S.uid,creadoEn:new Date().toISOString()});
+    S.cmtDraft=""; S.aviso="Reutilización registrada. Gracias: ese dato alimenta el indicador de reutilización."; render();
+  }catch(e){}
+}
+async function publicarCmt(id,tipo){
+  const texto=(S.cmtDraft||"").trim();
+  if(!texto){ S.aviso=""; const t=$("cmt"); if(t) t.focus(); return; }
+  if(!S.db||!S.uid) return;
+  try{
+    await S.db.collection("aportes/"+id+"/comentarios").add({tipo:tipo,texto:texto,autorId:S.uid,creadoEn:new Date().toISOString()});
+    await S.db.doc("aportes/"+id).update({comentaristas:{[S.uid]:true}});
+    S.cmtDraft=""; S.aviso=tipo==="actualizacion"?"Propuesta de actualización enviada; el validador la verá en la ficha.":"Comentario publicado."; render();
+  }catch(e){}
+}
+async function validar(id,estado,rapido){
+  if(!S.db||!S.canEdit) return;
+  let nota="",prox="";
+  if(!rapido){ nota=$("vnota")?$("vnota").value.trim():""; prox=$("vprox")?$("vprox").value:""; }
+  else if(estado==="aprobado"){ const d=new Date(); d.setMonth(d.getMonth()+6); prox=d.toISOString().slice(0,10); }
+  try{
+    await S.db.doc("data/editors-only/revisiones/"+id).set({estado:estado,nota:nota,proximaRevision:estado==="aprobado"?prox:"",
+      revisorId:S.uid||null,revisadoEn:new Date().toISOString()});
+    S.aviso={aprobado:"Aporte aprobado y publicado como conocimiento validado.",ajustes:"Aporte devuelto para ajustes.",archivado:"Aporte archivado.",pendiente:"Aporte devuelto a la cola de validación."}[estado]||"";
+    render();
+  }catch(e){}
+}
+})();
+</script>
+
+</body>
+</html>
